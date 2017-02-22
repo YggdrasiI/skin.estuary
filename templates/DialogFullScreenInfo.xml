@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+	<depth>DepthOSD</depth>
+	<defaultcontrol always="true">5553</defaultcontrol>
+	<controls>
+		<control type="button">
+			<description>background close area</description>
+			<left>{{ScaleX('0')}}</left>
+			<top>{{ScaleY('0')}}</top>
+			<width>{{ScaleX('100%')}}</width>
+			<bottom>{{ScaleY('280')}}</bottom>
+			<texturefocus />
+			<texturenofocus />
+			<onclick>Action(close)</onclick>
+		</control>
+		<control type="group">
+			<bottom>{{ScaleY('0')}}</bottom>
+			<height>{{ScaleY('230')}}</height>
+			<visible>!Window.IsVisible(playerprocessinfo)</visible>
+			<animation effect="fade" time="200">VisibleChange</animation>
+			<control type="group">
+				<animation effect="slide" end="{{ScaleBorder2('0,-80')}}" time="150" condition="PVR.IsTimeShift">conditional</animation>
+				<control type="image">
+					<depth>DepthOSD+</depth>
+					<left>{{ScaleX('10')}}</left>
+					<top>{{ScaleY('-490')}}</top>
+					<width>{{ScaleX('400')}}</width>
+					<height>{{ScaleY('600')}}</height>
+					<aspectratio aligny="bottom">keep</aspectratio>
+					<texture fallback="DefaultVideo.png" background="true">$VAR[NowPlayingPosterVar]</texture>
+					<bordertexture border="{{ScaleX('21')}}">overlays/shadow.png</bordertexture>
+					<bordersize>{{ScaleX('20')}}</bordersize>
+					<include>OpenClose_Left</include>
+				</control>
+				<control type="group">
+					<include>OpenClose_Right</include>
+					<control type="image">
+						<left>{{ScaleX('400')}}</left>
+						<top>{{ScaleY('-240')}}</top>
+						<right>{{ScaleX('20')}}</right>
+						<height>{{ScaleY('350')}}</height>
+						<texture>dialogs/dialog-bg-nobo.png</texture>
+						<bordertexture border="{{ScaleX('21')}}">overlays/shadow.png</bordertexture>
+						<bordersize>{{ScaleX('20')}}</bordersize>
+					</control>
+					<control type="textbox">
+						<left>{{ScaleX('443')}}</left>
+						<top>{{ScaleY('-207')}}</top>
+						<right>{{ScaleX('80')}}</right>
+						<height>{{ScaleY('290')}}</height>
+						<label fallback="416">$VAR[FullScreenInfoTextBoxVar]</label>
+						<align>justify</align>
+						<autoscroll delay="5000" repeat="7500" time="5000"></autoscroll>
+					</control>
+					<control type="grouplist" id="5550">
+						<right>{{ScaleX('20')}}</right>
+						<top>{{ScaleY('-310')}}</top>
+						<width>{{ScaleX('1000')}}</width>
+						<height>{{ScaleY('100')}}</height>
+						<align>right</align>
+						<orientation>horizontal</orientation>
+						<itemgap>{{ScaleX('-10')}}</itemgap>
+						<onup>Dialog.Close(fullscreeninfo)</onup>
+						<ondown>Dialog.Close(fullscreeninfo)</ondown>
+						<usecontrolcoords>true</usecontrolcoords>
+						<control type="button" id="5553">
+							<width>{{ScaleX('auto')}}</width>
+							<height>{{ScaleY('100')}}</height>
+							<textoffsetx>{{ScaleX('80')}}</textoffsetx>
+							<label>$LOCALIZE[207]</label>
+						</control>
+						<control type="button" id="5554">
+							<width>{{ScaleX('auto')}}</width>
+							<height>{{ScaleY('100')}}</height>
+							<textoffsetx>{{ScaleX('80')}}</textoffsetx>
+							<label>$LOCALIZE[206]</label>
+							<visible>!String.IsEmpty(VideoPlayer.CastAndRole)</visible>
+						</control>
+						<control type="button" id="5555">
+							<width>{{ScaleX('auto')}}</width>
+							<height>{{ScaleY('100')}}</height>
+							<textoffsetx>{{ScaleX('80')}}</textoffsetx>
+							<label>$LOCALIZE[19031]</label>
+							<visible>VideoPlayer.Content(livetv)</visible>
+						</control>
+					</control>
+				</control>
+			</control>
+			<control type="grouplist">
+				<right>{{ScaleX('20')}}</right>
+				<top>{{ScaleY('155')}}</top>
+				<width>{{ScaleX('1000')}}</width>
+				<height>{{ScaleY('100')}}</height>
+				<align>right</align>
+				<include>Animation_BottomSlide</include>
+				<orientation>horizontal</orientation>
+				<itemgap>{{ScaleX('10')}}</itemgap>
+				<visible>!Player.ChannelPreviewActive</visible>
+				<include content="MediaFlag">
+					<param name="texture" value="$INFO[VideoPlayer.AudioChannels,flags/audiochannel/,.png]" />
+				</include>
+				<include content="MediaFlag">
+					<param name="texture" value="$INFO[VideoPlayer.AudioCodec,flags/audiocodec/,.png]" />
+				</include>
+				<include content="MediaFlag">
+					<param name="texture" value="$INFO[VideoPlayer.VideoAspect,flags/aspectratio/,.png]" />
+				</include>
+				<include content="MediaFlag">
+					<param name="texture" value="$INFO[VideoPlayer.VideoCodec,flags/videocodec/,.png]" />
+				</include>
+			</control>
+		</control>
+	</controls>
+</window>

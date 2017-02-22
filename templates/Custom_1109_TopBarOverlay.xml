@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<window type="dialog" id="1109">
+	<visible>Window.IsActive(fullscreenvideo) | Window.IsActive(visualisation)</visible>
+	<visible>Window.IsActive(seekbar) | Window.IsActive(pvrosdchannels) | Window.IsActive(pvrosdguide)</visible>
+	<depth>DepthOSD</depth>
+	<include>Animation_TopSlide</include>
+	<zorder>0</zorder>
+	<controls>
+		<control type="group">
+			<animation effect="slide" end="{{ScaleBorder2('0,-90')}}" time="300" tween="sine" easing="inout" condition="$EXP[infodialog_active]">conditional</animation>
+			<depth>DepthBars</depth>
+			<control type="image">
+				<left>{{ScaleX('0')}}</left>
+				<top>{{ScaleY('0')}}</top>
+				<width>{{ScaleX('100%')}}</width>
+				<height>{{ScaleY('170')}}</height>
+				<texture>frame/osdfade.png</texture>
+			</control>
+			<control type="image">
+				<left>{{ScaleX('10')}}</left>
+				<top>{{ScaleY('0')}}</top>
+				<width>{{ScaleX('500')}}</width>
+				<height>{{ScaleY('160')}}</height>
+				<texture>$INFO[Player.Art(clearlogo)]</texture>
+				<aspectratio aligny="top" align="left">keep</aspectratio>
+			</control>
+			<control type="group">
+				<visible>!Window.IsActive(pvrosdchannels) + !Window.IsActive(pvrosdguide)</visible>
+				<visible>IsEmpty(Player.Art(clearlogo))</visible>
+				<animation effect="fade" time="150">VisibleChange</animation>
+				<left>{{ScaleX('30')}}</left>
+				<right>{{ScaleX('400')}}</right>
+				<control type="label">
+					<label>$VAR[NowPlayingBreadcrumbsVar]</label>
+					<font>font45</font>
+					<shadowcolor>text_shadow</shadowcolor>
+					<top>{{ScaleY('7')}}</top>
+					<height>{{ScaleY('100')}}</height>
+					<left>{{ScaleX('0')}}</left>
+					<right>{{ScaleX('0')}}</right>
+				</control>
+				<control type="label">
+					<top>{{ScaleY('60')}}</top>
+					<label>$VAR[OSDSubLabelVar]</label>
+					<shadowcolor>text_shadow</shadowcolor>
+					<height>{{ScaleY('100')}}</height>
+					<left>{{ScaleX('0')}}</left>
+					<right>{{ScaleX('0')}}</right>
+				</control>
+			</control>
+			<control type="group">
+				<visible>!Window.IsVisible(extendedprogressdialog)</visible>
+				<animation effect="fade" time="150">VisibleChange</animation>
+				<control type="label">
+					<font>font_clock</font>
+					<shadowcolor>text_shadow</shadowcolor>
+					<top>{{ScaleY('0')}}</top>
+					<right>{{ScaleX('20')}}</right>
+					<height>{{ScaleY('200')}}</height>
+					<width>{{ScaleX('600')}}</width>
+					<align>right</align>
+					<label>$INFO[System.Time]</label>
+				</control>
+				<control type="grouplist">
+					<right>{{ScaleX('24')}}</right>
+					<top>{{ScaleY('74')}}</top>
+					<width>{{ScaleX('800')}}</width>
+					<height>{{ScaleY('100')}}</height>
+					<align>right</align>
+					<itemgap>{{ScaleX('5')}}</itemgap>
+					<orientation>horizontal</orientation>
+					<usecontrolcoords>true</usecontrolcoords>
+					<control type="label">
+						<label>$INFO[Player.FinishTime,$LOCALIZE[31080]: ]</label>
+						<shadowcolor>text_shadow</shadowcolor>
+						<height>{{ScaleY('100')}}</height>
+						<width>{{ScaleX('auto')}}</width>
+						<visible>!String.isempty(Player.Duration)</visible>
+						<visible>Player.HasVideo</visible>
+						<visible>!VideoPlayer.Content(LiveTV) | VideoPlayer.HasEpg</visible>
+					</control>
+					<control type="image">
+						<top>{{ScaleY('2')}}</top>
+						<left>{{ScaleX('0')}}</left>
+						<width>{{ScaleX('60')}}</width>
+						<height>{{ScaleY('40')}}</height>
+						<fadetime>300</fadetime>
+						<aspectratio aligny="center" align="right">keep</aspectratio>
+						<texture>dialogs/volume/mute.png</texture>
+						<visible>Player.Muted</visible>
+					</control>
+				</control>
+			</control>
+		</control>
+	</controls>
+</window>

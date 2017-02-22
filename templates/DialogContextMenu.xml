@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+	<defaultcontrol>996</defaultcontrol>
+	<include>Animation_DialogPopupOpenClose</include>
+	<coordinates>
+		<left>{{ScaleX('0')}}</left>
+		<top>{{ScaleY('0')}}</top>
+		<origin x="1055" y="400">Window.IsActive(Home) + String.IsEqual(Skin.AspectRatio,21:9)</origin>
+		<origin x="735" y="400">Window.IsActive(Home) + !String.IsEqual(Skin.AspectRatio,21:9)</origin>
+	</coordinates>
+	<controls>
+		<control type="image">
+			<left>{{ScaleX('-1920')}}</left>
+			<top>{{ScaleY('-1080')}}</top>
+			<width>{{ScaleX('5760')}}</width>
+			<height>{{ScaleY('3240')}}</height>
+			<animation effect="fade" start="0" end="100" time="300">WindowOpen</animation>
+			<animation effect="fade" start="100" end="0" time="200">WindowClose</animation>
+			<texture colordiffuse="B0FFFFFF">colors/black.png</texture>
+		</control>
+		<control type="button">
+			<left>{{ScaleX('-1920')}}</left>
+			<top>{{ScaleY('-1080')}}</top>
+			<width>{{ScaleX('5760')}}</width>
+			<height>{{ScaleY('3240')}}</height>
+			<texturefocus />
+			<texturenofocus />
+			<onclick>Action(close)</onclick>
+		</control>
+		<control type="image" id="999">
+			<description>background image</description>
+			<left>{{ScaleX('0')}}</left>
+			<top>{{ScaleY('0')}}</top>
+			<width>{{ScaleX('{{ 450 + {DialogExtraWidth} }}')}}</width>
+			<height>{{ScaleY('780')}}</height>
+			<texture colordiffuse="dialog_tint">colors/white.png</texture>
+		</control>
+		<control type="grouplist" id="996">
+			<description>grouplist for context buttons</description>
+			<left>{{ScaleX('0')}}</left>
+			<top>{{ScaleY('0')}}</top>
+			<width>{{ScaleX('{{ 450 + {DialogExtraWidth} }}')}}</width>
+			<height max="780">auto</height>
+			<usecontrolcoords>true</usecontrolcoords>
+		</control>
+		<control type="button" id="1000">
+			<description>button template</description>
+			<left>{{ScaleX('0')}}</left>
+			<top></top>
+			<width>{{ScaleX('{{ 450 + {DialogExtraWidth} }}')}}</width>
+			<height>{{ScaleY('65')}}</height>
+			<align>center</align>
+			<texturefocus colordiffuse="button_focus">lists/focus.png</texturefocus>
+			<texturenofocus />
+		</control>
+		<include content="UpDownArrows">
+			<param name="container_id" value="996" />
+			<param name="posx" value="{{ScaleX('{{ 201 + {DialogExtraWidth} }}')}}" />
+			<param name="up_posy" value="{{ScaleY('-40')}}" />
+			<param name="down_posy" value="{{ScaleY('798')}}" />
+		</include>
+	</controls>
+</window>

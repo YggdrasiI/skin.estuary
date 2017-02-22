@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+	<include name="View_53_Shift">
+		<control type="group">
+			<description>Poster Viewtype</description>
+			<centertop>50%</centertop>
+			<left>{{ScaleX('0')}}</left>
+			<height>{{ScaleY('880')}}</height>
+			<control type="group">
+				<visible>Control.IsVisible(53)</visible>
+				<animation effect="fade" start="0" end="100" time="300">WindowOpen</animation>
+				<animation effect="fade" start="100" end="0" time="300">WindowClose</animation>
+				<animation effect="fade" time="200">VisibleChange</animation>
+				<control type="image">
+					<left>{{ScaleX('0')}}</left>
+					<top>{{ScaleY('760')}}</top>
+					<width>{{ScaleX('100%')}}</width>
+					<height>{{ScaleY('110')}}</height>
+					<texture colordiffuse="E6FFFFFF">dialogs/dialog-bg-nobo.png</texture>
+				</control>
+				<control type="image">
+					<left>{{ScaleX('0')}}</left>
+					<top>{{ScaleY('35')}}</top>
+					<width>{{ScaleX('100%')}}</width>
+					<height>{{ScaleY('190')}}</height>
+					<texture colordiffuse="E6FFFFFF">dialogs/dialog-bg-nobo.png</texture>
+				</control>
+			</control>
+			<control type="group">
+				<visible>Control.IsVisible(53)</visible>
+				<include>Visible_Right</include>
+				<include>OpenClose_Right</include>
+				<top>{{ScaleY('160')}}</top>
+				<control type="image">
+					<left>{{ScaleX('600')}}</left>
+					<top>{{ScaleY('600')}}</top>
+					<width>{{ScaleX('340')}}</width>
+					<height>{{ScaleY('110')}}</height>
+					<visible>Control.HasFocus(53)</visible>
+					<animation effect="fade" time="200">VisibleChange</animation>
+					<texture colordiffuse="button_focus">colors/grey.png</texture>
+					<animation effect="slide" start="{{ScaleBorder2('0,0')}}" end="{{ScaleBorder2('-364,0')}}" time="300" tween="sine" easing="inout" condition="Integer.IsEqual(Container.Position,1) | Integer.IsEqual(Container.Position,0)">Conditional</animation>
+					<animation effect="slide" start="{{ScaleBorder2('0,0')}}" end="{{ScaleBorder2('-364,0')}}" time="300" tween="sine" easing="inout" condition="Integer.IsEqual(Container.Position,0)">Conditional</animation>
+					<animation effect="slide" start="{{ScaleBorder2('0,0')}}" end="{{ScaleBorder2('364,0')}}" time="300" tween="sine" easing="inout" condition="Integer.IsEqual(Container.Position,3) | Integer.IsEqual(Container.Position,4)">Conditional</animation>
+					<animation effect="slide" start="{{ScaleBorder2('0,0')}}" end="{{ScaleBorder2('364,0')}}" time="300" tween="sine" easing="inout" condition="Integer.IsEqual(Container.Position,4)">Conditional</animation>
+				</control>
+				<control type="fixedlist" id="53">
+					<left>{{ScaleX('-150')}}</left>
+					<top>{{ScaleY('0')}}</top>
+					<width>{{ScaleX('111%')}}</width>
+					<height>{{ScaleY('695')}}</height>
+					<focusposition>1</focusposition>
+					<movement>0</movement>
+					<pagecontrol>5199</pagecontrol>
+					<scrolltime tween="cubic" easing="out">500</scrolltime>
+					<orientation>horizontal</orientation>
+					<visible>Container.Content(movies) | Container.Content(sets) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(musicvideos) | Container.Content(artists) | Container.Content(albums) | Container.Content(mixed) | Container.Content(images) | Container.Content(videos)</visible>
+					<onleft>53</onleft>
+					<onup>9000</onup>
+					<ondown>5199</ondown>
+					<onright>53</onright>
+					<preloaditems>1</preloaditems>
+					<viewtype label="31100">icon</viewtype>
+					<itemlayout width="{{ScaleX('370')}}">
+						<control type="image">
+							<depth>DepthContentPopout</depth>
+							<left>{{ScaleX('0')}}</left>
+							<top>{{ScaleY('90')}}</top>
+							<width>{{ScaleX('370')}}</width>
+							<height>{{ScaleY('480')}}</height>
+							<aspectratio aligny="center">keep</aspectratio>
+							<texture fallback="DefaultVideo.png">$VAR[ShiftThumbVar]</texture>
+							<bordertexture border="{{ScaleX('21')}}">overlays/shadow.png</bordertexture>
+							<bordersize>{{ScaleX('20')}}</bordersize>
+						</control>
+						<control type="textbox">
+							<left>{{ScaleX('20')}}</left>
+							<top>{{ScaleY('603')}}</top>
+							<width>{{ScaleX('330')}}</width>
+							<height>{{ScaleY('105')}}</height>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>$INFO[ListItem.Label]</label>
+						</control>
+						<control type="image">
+							<left>{{ScaleX('169')}}</left>
+							<top>{{ScaleY('560')}}</top>
+							<width>{{ScaleX('32')}}</width>
+							<height>{{ScaleY('32')}}</height>
+							<texture>$VAR[WallWatchedIconVar]</texture>
+						</control>
+					</itemlayout>
+					<focusedlayout width="{{ScaleX('370')}}">
+						<control type="image">
+							<depth>DepthContentPopout</depth>
+							<left>{{ScaleX('0')}}</left>
+							<top>{{ScaleY('90')}}</top>
+							<width>{{ScaleX('370')}}</width>
+							<height>{{ScaleY('480')}}</height>
+							<aspectratio aligny="center">keep</aspectratio>
+							<texture fallback="DefaultVideo.png">$VAR[ShiftThumbVar]</texture>
+							<bordertexture border="{{ScaleX('21')}}">overlays/shadow.png</bordertexture>
+							<bordersize>{{ScaleX('20')}}</bordersize>
+						</control>
+						<control type="textbox">
+							<left>{{ScaleX('20')}}</left>
+							<top>{{ScaleY('603')}}</top>
+							<width>{{ScaleX('330')}}</width>
+							<height>{{ScaleY('105')}}</height>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>$INFO[ListItem.Label]</label>
+							<autoscroll time="3000" delay="3000" repeat="3000">True</autoscroll>
+						</control>
+						<control type="image">
+							<left>{{ScaleX('169')}}</left>
+							<top>{{ScaleY('560')}}</top>
+							<width>{{ScaleX('32')}}</width>
+							<height>{{ScaleY('32')}}</height>
+							<texture>$VAR[WallWatchedIconVar]</texture>
+						</control>
+					</focusedlayout>
+				</control>
+			</control>
+			<control type="group">
+				<visible>Control.IsVisible(53)</visible>
+				<include>Visible_Right</include>
+				<include>OpenClose_Right</include>
+				<control type="group">
+					<width>{{ScaleX('50%')}}</width>
+					<include content="ShiftTextbox">
+						<param name="textbox_id" value="53200" />
+						<param name="textbox_content" value="$VAR[ShiftLeftTextBoxVar]" />
+					</include>
+				</control>
+				<control type="group">
+					<left>{{ScaleX('50%')}}</left>
+					<width>{{ScaleX('50%')}}</width>
+					<include content="ShiftTextbox">
+						<param name="textbox_id" value="53300" />
+						<param name="textbox_content" value="$VAR[ShiftRightTextBoxVar]" />
+					</include>
+				</control>
+				<control type="panel">
+					<left>{{ScaleX('20')}}</left>
+					<top>{{ScaleY('48')}}</top>
+					<width>{{ScaleX('1880')}}</width>
+					<height>{{ScaleY('180')}}</height>
+					<orientation>horizontal</orientation>
+					<visible>ListItem.IsCollection</visible>
+					<animation effect="fade" time="200">VisibleChange</animation>
+					<focusedlayout height="{{ScaleY('40')}}" width="{{ScaleX('628')}}">
+						<control type="label">
+							<textoffsetx>{{ScaleX('10')}}</textoffsetx>
+							<height>{{ScaleY('40')}}</height>
+							<width>{{ScaleX('628')}}</width>
+							<aligny>center</aligny>
+							<label>$INFO[ListItem.Year,[COLOR button_focus],[/COLOR]  -  ]$INFO[ListItem.Title]</label>
+							<shadowcolor>text_shadow</shadowcolor>
+						</control>
+					</focusedlayout>
+					<itemlayout height="{{ScaleY('40')}}" width="{{ScaleX('628')}}">
+						<control type="label">
+							<textoffsetx>{{ScaleX('10')}}</textoffsetx>
+							<height>{{ScaleY('40')}}</height>
+							<width>{{ScaleX('628')}}</width>
+							<aligny>center</aligny>
+							<label>$INFO[ListItem.Year,[COLOR button_focus],[/COLOR]  -  ]$INFO[ListItem.Title]</label>
+							<shadowcolor>text_shadow</shadowcolor>
+						</control>
+					</itemlayout>
+					<content sortby="year" sortorder="descending">$VAR[InfoListPathVar]</content>
+				</control>
+			</control>
+		</control>
+	</include>
+	<include name="ShiftTextbox">
+		<control type="group">
+			<animation effect="fade" time="200" start="0" end="100" condition="!String.IsEmpty(Control.GetLabel($PARAM[textbox_id]))">Conditional</animation>
+			<animation effect="fade" time="200" start="100" end="0" condition="String.IsEmpty(Control.GetLabel($PARAM[textbox_id]))">Conditional</animation>
+			<control type="textbox" id="$PARAM[textbox_id]">
+				<left>{{ScaleX('30')}}</left>
+				<top>{{ScaleY('45')}}</top>
+				<right>{{ScaleX('30')}}</right>
+				<height>{{ScaleY('163')}}</height>
+				<label>$PARAM[textbox_content]</label>
+				<shadowcolor>text_shadow</shadowcolor>
+			</control>
+		</control>
+	</include>
+</includes>

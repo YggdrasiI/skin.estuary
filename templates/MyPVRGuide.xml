@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+	<defaultcontrol always="true">10</defaultcontrol>
+	<backgroundcolor>background</backgroundcolor>
+	<views>10</views>
+	<menucontrol>9000</menucontrol>
+	<controls>
+		<include>DefaultBackground</include>
+		<control type="group" id="50">
+			<animation effect="fade" start="100" end="0" time="200" tween="sine" condition="$EXP[infodialog_active]">Conditional</animation>
+			<control type="group">
+				<description>Guide Timeline</description>
+				<visible>Control.IsVisible(10)</visible>
+				<include>OpenClose_Right</include>
+				<include>Visible_Right</include>
+				<control type="group">
+					<top>{{ScaleY('140')}}</top>
+					<depth>DepthContentPanel</depth>
+					<control type="image">
+						<left>{{ScaleX('0')}}</left>
+						<top>{{ScaleY('-10')}}</top>
+						<width>{{ScaleX('100%')}}</width>
+						<bottom>{{ScaleY('336')}}</bottom>
+						<texture colordiffuse="E6FFFFFF">dialogs/dialog-bg-nobo.png</texture>
+					</control>
+					<control type="epggrid" id="10">
+						<left>{{ScaleX('0')}}</left>
+						<top>{{ScaleY('0')}}</top>
+						<right>{{ScaleX('20')}}</right>
+						<bottom>{{ScaleY('340')}}</bottom>
+						<pagecontrol>60</pagecontrol>
+						<scrolltime tween="quadratic" easing="out">300</scrolltime>
+						<timeblocks>34</timeblocks>
+						<rulerunit>6</rulerunit>
+						<onleft>9000</onleft>
+						<onright>60</onright>
+						<onup>10</onup>
+						<ondown>10</ondown>
+						<viewtype label="19032">list</viewtype>
+						<progresstexture border="0,60,18,14" colordiffuse="button_focus">windows/pvr/epg_progress.png</progresstexture>
+						<rulerlayout height="45" width="1400">
+							<control type="label">
+								<width>{{ScaleX('365')}}</width>
+								<height>{{ScaleY('45')}}</height>
+								<font>font12</font>
+								<label>$INFO[ListItem.Label]</label>
+								<textoffsetx>{{ScaleX('10')}}</textoffsetx>
+								<textcolor>button_focus</textcolor>
+							</control>
+						</rulerlayout>
+						<channellayout height="62" width="350">
+							<control type="label">
+								<left>{{ScaleX('2')}}</left>
+								<top>{{ScaleY('-2')}}</top>
+								<width>{{ScaleX('75')}}</width>
+								<height>{{ScaleY('60')}}</height>
+								<font>font32_title</font>
+								<label>$INFO[ListItem.ChannelNumberLabel]</label>
+								<align>center</align>
+								<aligny>center</aligny>
+							</control>
+							<control type="label" id="1">
+								<left>{{ScaleX('68')}}</left>
+								<top>{{ScaleY('-2')}}</top>
+								<width>{{ScaleX('350')}}</width>
+								<height>{{ScaleY('60')}}</height>
+								<font>font12</font>
+								<label>$INFO[ListItem.ChannelName]</label>
+								<aligny>center</aligny>
+								<textoffsetx>{{ScaleX('10')}}</textoffsetx>
+							</control>
+						</channellayout>
+						<focusedchannellayout height="62" width="350">
+							<control type="label">
+								<left>{{ScaleX('2')}}</left>
+								<top>{{ScaleY('-2')}}</top>
+								<width>{{ScaleX('75')}}</width>
+								<height>{{ScaleY('60')}}</height>
+								<font>font32_title</font>
+								<label>$INFO[ListItem.ChannelNumberLabel]</label>
+								<textcolor>button_focus</textcolor>
+								<align>center</align>
+								<aligny>center</aligny>
+							</control>
+							<control type="label" id="1">
+								<left>{{ScaleX('68')}}</left>
+								<top>{{ScaleY('-2')}}</top>
+								<width>{{ScaleX('350')}}</width>
+								<height>{{ScaleY('60')}}</height>
+								<font>font12</font>
+								<label>$INFO[ListItem.ChannelName]</label>
+								<textcolor>button_focus</textcolor>
+								<aligny>center</aligny>
+								<textoffsetx>{{ScaleX('10')}}</textoffsetx>
+							</control>
+						</focusedchannellayout>
+						<itemlayout height="{{ScaleY('62')}}" width="{{ScaleX('60')}}">
+							<control type="image" id="2">
+								<width>{{ScaleX('58')}}</width>
+								<height>{{ScaleY('58')}}</height>
+								<texture border="{{ScaleBorder('3')}}" fallback="windows/pvr/epg-genres/0.png">$INFO[ListItem.Property(GenreType),windows/pvr/epg-genres/,.png]</texture>
+							</control>
+							<control type="label" id="1">
+								<left>{{ScaleX('6')}}</left>
+								<top>{{ScaleY('0')}}</top>
+								<width>{{ScaleX('50')}}</width>
+								<height>{{ScaleY('36')}}</height>
+								<aligny>center</aligny>
+								<font>font12</font>
+								<label>$INFO[ListItem.Label]</label>
+							</control>
+							<control type="image">
+								<left>{{ScaleX('6')}}</left>
+								<top>{{ScaleY('35')}}</top>
+								<width>{{ScaleX('20')}}</width>
+								<height>{{ScaleY('20')}}</height>
+								<texture>$VAR[PVRTimerIcon]</texture>
+							</control>
+						</itemlayout>
+						<focusedlayout height="{{ScaleY('62')}}" width="{{ScaleX('60')}}">
+							<control type="image" id="2">
+								<top>{{ScaleY('2')}}</top>
+								<left>{{ScaleX('2')}}</left>
+								<width>{{ScaleX('54')}}</width>
+								<height>{{ScaleY('54')}}</height>
+								<texture colordiffuse="button_focus">lists/focus.png</texture>
+								<visible>Control.HasFocus(10)</visible>
+							</control>
+							<control type="image" id="2">
+								<width>{{ScaleX('58')}}</width>
+								<height>{{ScaleY('58')}}</height>
+								<texture border="{{ScaleBorder('8')}}" colordiffuse="button_focus">buttons/thumbnail_focused.png</texture>
+							</control>
+							<control type="image" id="2">
+								<width>{{ScaleX('58')}}</width>
+								<height>{{ScaleY('58')}}</height>
+								<top>{{ScaleY('0')}}</top>
+								<texture border="{{ScaleBorder('3')}}" fallback="windows/pvr/epg-genres/0.png">$INFO[ListItem.Property(GenreType),windows/pvr/epg-genres/,.png]</texture>
+								<visible>!Control.HasFocus(10)</visible>
+							</control>
+							<control type="label" id="1">
+								<left>{{ScaleX('6')}}</left>
+								<top>{{ScaleY('0')}}</top>
+								<width>{{ScaleX('50')}}</width>
+								<height>{{ScaleY('36')}}</height>
+								<aligny>center</aligny>
+								<font>font12</font>
+								<label>$INFO[ListItem.Label]</label>
+							</control>
+							<control type="image">
+								<left>{{ScaleX('6')}}</left>
+								<top>{{ScaleY('35')}}</top>
+								<width>{{ScaleX('20')}}</width>
+								<height>{{ScaleY('20')}}</height>
+								<texture>$VAR[PVRTimerIcon]</texture>
+							</control>
+						</focusedlayout>
+					</control>
+					<control type="scrollbar" id="60">
+						<right>{{ScaleX('0')}}</right>
+						<top>{{ScaleY('47')}}</top>
+						<width>{{ScaleX('12')}}</width>
+						<bottom>{{ScaleY('340')}}</bottom>
+						<onleft>10</onleft>
+						<onright>10</onright>
+						<orientation>vertical</orientation>
+						<texturesliderbackground colordiffuse="22FFFFFF">colors/white.png</texturesliderbackground>
+						<animation effect="fade" start="100" end="40" time="0" condition="!system.getbool(input.enablemouse)">Conditional</animation>
+					</control>
+				</control>
+				<control type="group">
+					<bottom>{{ScaleY('0')}}</bottom>
+					<height>{{ScaleY('300')}}</height>
+					<control type="image">
+						<left>{{ScaleX('10')}}</left>
+						<width>{{ScaleX('240')}}</width>
+						<height>{{ScaleY('200')}}</height>
+						<aspectratio align="right">keep</aspectratio>
+						<fadetime>400</fadetime>
+						<texture>$INFO[ListItem.Icon]</texture>
+					</control>
+					<control type="label">
+						<top>{{ScaleY('-9')}}</top>
+						<left>{{ScaleX('300')}}</left>
+						<right>{{ScaleX('60')}}</right>
+						<height>{{ScaleY('30')}}</height>
+						<textcolor>button_focus</textcolor>
+						<label>$INFO[ListItem.StartTime,, - ]$INFO[ListItem.EndTime]$INFO[ListItem.EpgEventTitle,  [COLOR white],[/COLOR]]$INFO[ListItem.EpisodeName, [COLOR grey](,)[/COLOR]]$INFO[ListItem.Genre,      $LOCALIZE[515]: [COLOR grey],[/COLOR]]</label>
+					</control>
+					<control type="textbox">
+						<left>{{ScaleX('300')}}</left>
+						<top>{{ScaleY('38')}}</top>
+						<right>{{ScaleX('60')}}</right>
+						<height>{{ScaleY('173')}}</height>
+						<label>$INFO[ListItem.Plot]</label>
+						<autoscroll delay="10000" time="3000" repeat="10000">Skin.HasSetting(AutoScroll)</autoscroll>
+					</control>
+				</control>
+			</control>
+			<include content="TopBar">
+				<param name="breadcrumbs_label" value="$VAR[BreadcrumbsPVRGuideVar]" />
+				<param name="sublabel" value="" />
+			</include>
+			<include content="BottomBar">
+				<param name="info_visible" value="true" />
+			</include>
+			<control type="group">
+				<include>MediaMenuCommon</include>
+				<include content="PVRSideBar">
+					<param name="group_label2" value="$INFO[Control.GetLabel(30)]" />
+				</include>
+			</control>
+		</control>
+		<control type="label" id="29">
+			<font></font>
+			<include>HiddenObject</include>
+		</control>
+		<control type="label" id="30">
+			<font></font>
+			<include>HiddenObject</include>
+		</control>
+	</controls>
+</window>

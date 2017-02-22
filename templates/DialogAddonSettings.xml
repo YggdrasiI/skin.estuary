@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+	<defaultcontrol always="true">9</defaultcontrol>
+	<include>Animation_DialogPopupOpenClose</include>
+	<controls>
+		<control type="group">
+			<centertop>50%</centertop>
+			<height>{{ScaleY('800')}}</height>
+			<centerleft>50%</centerleft>
+			<width>{{ScaleX('1820')}}</width>
+			<include content="DialogBackgroundCommons">
+				<param name="width" value="{{ScaleX('1820')}}" />
+				<param name="height" value="{{ScaleY('800')}}" />
+				<param name="header_label" value="" />
+				<param name="header_id" value="20" />
+			</include>
+			<control type="grouplist" id="9">
+				<description>button area</description>
+				<left>{{ScaleX('20')}}</left>
+				<top>{{ScaleY('70')}}</top>
+				<width>{{ScaleX('400')}}</width>
+				<height>{{ScaleY('700')}}</height>
+				<itemgap>{{ScaleX('-25')}}</itemgap>
+				<orientation>vertical</orientation>
+				<onleft>9001</onleft>
+				<onright>2</onright>
+				<onup>9</onup>
+				<ondown>9</ondown>
+			</control>
+			<include content="UpDownArrows">
+				<param name="container_id" value="2" />
+				<param name="posx" value="{{ScaleX('830')}}" />
+				<param name="up_posy" value="{{ScaleY('-42')}}" />
+				<param name="down_posy" value="{{ScaleY('814')}}" />
+			</include>
+			<control type="image">
+				<left>{{ScaleX('400')}}</left>
+				<top>{{ScaleY('70')}}</top>
+				<width>{{ScaleX('1100')}}</width>
+				<height>{{ScaleY('722')}}</height>
+				<texture border="{{ScaleBorder('40')}}">buttons/dialogbutton-nofo.png</texture>
+			</control>
+			<control type="grouplist" id="2">
+				<description>control area</description>
+				<left>{{ScaleX('420')}}</left>
+				<top>{{ScaleY('90')}}</top>
+				<width>{{ScaleX('1060')}}</width>
+				<height>{{ScaleY('680')}}</height>
+				<onup>2</onup>
+				<ondown>2</ondown>
+				<onleft>9</onleft>
+				<onright>9001</onright>
+			</control>
+			<control type="grouplist" id="9001">
+				<right>{{ScaleX('20')}}</right>
+				<top>{{ScaleY('70')}}</top>
+				<width>{{ScaleX('300')}}</width>
+				<height>{{ScaleY('700')}}</height>
+				<itemgap>{{ScaleX('dialogbuttons_itemgap')}}</itemgap>
+				<align>left</align>
+				<orientation>vertical</orientation>
+				<onup>9001</onup>
+				<ondown>9001</ondown>
+				<onleft>2</onleft>
+				<onright>9</onright>
+				<include content="DefaultDialogButton">
+					<param name="id" value="10" />
+					<param name="label" value="$LOCALIZE[186]" />
+				</include>
+				<include content="DefaultDialogButton">
+					<param name="id" value="11" />
+					<param name="label" value="$LOCALIZE[222]" />
+				</include>
+				<include content="DefaultDialogButton">
+					<param name="id" value="12" />
+					<param name="label" value="$LOCALIZE[409]" />
+				</include>
+			</control>
+			<control type="button" id="13">
+				<description>Default Category Button</description>
+				<height>{{ScaleY('120')}}</height>
+				<width>{{ScaleX('390')}}</width>
+				<textoffsetx>{{ScaleX('20')}}</textoffsetx>
+				<align>center</align>
+				<aligny>center</aligny>
+				<font>font25_title</font>
+				<texturenofocus border="40">buttons/dialogbutton-nofo.png</texturenofocus>
+			</control>
+			<control type="button" id="3">
+				<include>DefaultSettingButton</include>
+			</control>
+			<control type="radiobutton" id="4">
+				<include>DefaultSettingButton</include>
+				<textwidth>900</textwidth>
+			</control>
+			<control type="spincontrolex" id="5">
+				<include>DefaultSettingButton</include>
+				<textwidth>900</textwidth>
+			</control>
+			<control type="label" id="7">
+				<height>{{ScaleY('60')}}</height>
+				<font>font12</font>
+				<label></label>
+				<textoffsetx>{{ScaleX('40')}}</textoffsetx>
+				<textoffsety>{{ScaleY('20')}}</textoffsety>
+				<textcolor>button_focus</textcolor>
+				<shadowcolor>black</shadowcolor>
+				<aligny>bottom</aligny>
+			</control>
+			<control type="image" id="6">
+				<description>separator image</description>
+				<height>{{ScaleY('3')}}</height>
+				<texture colordiffuse="AAAAAAAA" border="3">dialogs/separator-grey.png</texture>
+			</control>
+			<control type="sliderex" id="8">
+				<include>DefaultSettingButton</include>
+			</control>
+		</control>
+	</controls>
+</window>

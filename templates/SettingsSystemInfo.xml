@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+	<defaultcontrol always="true">95</defaultcontrol>
+	<controls>
+		<include>DefaultBackground</include>
+		<control type="multiimage">
+			<depth>DepthBackground</depth>
+			<include>FullScreenDimensions</include>
+			<aspectratio>scale</aspectratio>
+			<fadetime>600</fadetime>
+			<animation effect="zoom" center="{{ScaleBorder2('auto')}}" end="102,102" time="0" condition="Integer.IsGreater(System.StereoscopicMode,0)">conditional</animation>
+			<animation effect="fade" start="0" end="100" time="400">WindowOpen</animation>
+			<animation effect="fade" start="100" end="0" time="300">WindowClose</animation>
+			<animation effect="fade" time="400">VisibleChange</animation>
+			<imagepath background="true" colordiffuse="bg_overlay">$INFO[Skin.String(HomeFanart.path)]settings$INFO[Skin.String(HomeFanart.ext)]</imagepath>
+			<visible>!Player.HasMedia + !String.IsEmpty(Skin.String(HomeFanart.path))</visible>
+		</control>
+		<control type="group">
+			<left>{{ScaleX('60')}}</left>
+			<top>{{ScaleY('70')}}</top>
+			<include>OpenClose_Right</include>
+			<control type="grouplist">
+				<left>{{ScaleX('430')}}</left>
+				<top>{{ScaleY('105')}}</top>
+				<height>{{ScaleY('550')}}</height>
+				<orientation>vertical</orientation>
+				<control type="label" id="2">
+					<height>{{ScaleY('47')}}</height>
+					<width>{{ScaleX('1370')}}</width>
+					<font>Mono30</font>
+				</control>
+				<control type="label" id="3">
+					<height>{{ScaleY('47')}}</height>
+					<width>{{ScaleX('1370')}}</width>
+					<font>Mono30</font>
+				</control>
+				<control type="label" id="4">
+					<height>{{ScaleY('47')}}</height>
+					<width>{{ScaleX('1370')}}</width>
+					<font>Mono30</font>
+				</control>
+				<control type="label" id="5">
+					<height>{{ScaleY('47')}}</height>
+					<width>{{ScaleX('1370')}}</width>
+					<font>Mono30</font>
+				</control>
+				<control type="label" id="6">
+					<height>{{ScaleY('47')}}</height>
+					<width>{{ScaleX('1370')}}</width>
+					<font>Mono30</font>
+				</control>
+				<control type="label" id="7">
+					<height>{{ScaleY('47')}}</height>
+					<width>{{ScaleX('1370')}}</width>
+					<font>Mono30</font>
+				</control>
+				<control type="label" id="8">
+					<height>{{ScaleY('47')}}</height>
+					<width>{{ScaleX('1370')}}</width>
+					<font>Mono30</font>
+				</control>
+				<control type="label" id="9">
+					<height>{{ScaleY('47')}}</height>
+					<width>{{ScaleX('1370')}}</width>
+					<font>Mono30</font>
+				</control>
+				<control type="label" id="10">
+					<height>{{ScaleY('47')}}</height>
+					<width>{{ScaleX('1370')}}</width>
+					<font>Mono30</font>
+				</control>
+				<control type="label" id="11">
+					<height>{{ScaleY('47')}}</height>
+					<width>{{ScaleX('1370')}}</width>
+					<font>Mono30</font>
+				</control>
+				<control type="label" id="12">
+					<height>{{ScaleY('47')}}</height>
+					<width>{{ScaleX('1370')}}</width>
+					<font>Mono30</font>
+				</control>
+			</control>
+			<control type="textbox" id="30">
+				<left>{{ScaleX('430')}}</left>
+				<right>{{ScaleX('50')}}</right>
+				<top>{{ScaleY('100')}}</top>
+				<bottom>{{ScaleY('315')}}</bottom>
+				<pagecontrol>60</pagecontrol>
+				<autoscroll delay="5000" repeat="7500" time="5000">!Control.HasFocus(60)</autoscroll>
+			</control>
+			<control type="scrollbar" id="60">
+				<right>{{ScaleX('0')}}</right>
+				<top>{{ScaleY('93')}}</top>
+				<width>{{ScaleX('12')}}</width>
+				<bottom>{{ScaleY('312')}}</bottom>
+				<orientation>vertical</orientation>
+				<texturesliderbackground />
+				<animation effect="slide" end="{{ScaleBorder2('6,0')}}" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(60)">conditional</animation>
+				<onleft>9000</onleft>
+				<onright>9000</onright>
+				<visible>Control.IsVisible(30)</visible>
+				<animation effect="fade" start="0" end="100" time="200" delay="300">Visible</animation>
+				<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
+				<animation effect="fade" start="0" end="100" delay="300" time="320">WindowOpen</animation>
+				<animation effect="fade" start="100" end="0" time="150">WindowClose</animation>
+			</control>
+			<control type="image">
+				<left>{{ScaleX('360')}}</left>
+				<top>{{ScaleY('90')}}</top>
+				<right>{{ScaleX('0')}}</right>
+				<height>{{ScaleY('3')}}</height>
+				<texture colordiffuse="button_focus" border="2">dialogs/separator-grey.png</texture>
+			</control>
+			<control type="group">
+				<bottom>{{ScaleY('0')}}</bottom>
+				<height>{{ScaleY('330')}}</height>
+				<control type="image">
+					<left>{{ScaleX('360')}}</left>
+					<top>{{ScaleY('20')}}</top>
+					<right>{{ScaleX('0')}}</right>
+					<height>{{ScaleY('3')}}</height>
+					<texture colordiffuse="button_focus" border="2">dialogs/separator-grey.png</texture>
+				</control>
+				<control type="grouplist">
+					<left>{{ScaleX('430')}}</left>
+					<orientation>vertical</orientation>
+					<control type="label">
+						<description>CPU Text</description>
+						<width>{{ScaleX('730')}}</width>
+						<height>{{ScaleY('80')}}</height>
+						<label>$LOCALIZE[13271] $INFO[System.CPUUsage]</label>
+						<aligny>top</aligny>
+						<textoffsety>{{ScaleY('40')}}</textoffsety>
+						<shadowcolor>black</shadowcolor>
+						<font>font27</font>
+					</control>
+					<control type="progress">
+						<description>CPU BAR</description>
+						<width>{{ScaleX('730')}}</width>
+						<height>{{ScaleY('16')}}</height>
+						<info>System.CPUUsage</info>
+					</control>
+					<control type="label">
+						<description>Memory Text</description>
+						<width>{{ScaleX('730')}}</width>
+						<height>{{ScaleY('40')}}</height>
+						<label>$LOCALIZE[31030]: $INFO[system.memory(used)] [B]/[/B] $INFO[system.memory(total)] [B]-[/B] $INFO[system.memory(used.percent)]</label>
+						<aligny>center</aligny>
+						<shadowcolor>black</shadowcolor>
+						<font>font27</font>
+					</control>
+					<control type="progress">
+						<description>Memory BAR</description>
+						<width>{{ScaleX('730')}}</width>
+						<height>{{ScaleY('16')}}</height>
+						<info>system.memory(used)</info>
+					</control>
+				</control>
+				<control type="label">
+					<top>{{ScaleY('34')}}</top>
+					<left>{{ScaleX('1210')}}</left>
+					<width>{{ScaleX('auto')}}</width>
+					<height>{{ScaleY('50')}}</height>
+					<aligny>bottom</aligny>
+					<textoffsety>{{ScaleY('10')}}</textoffsety>
+					<label>$LOCALIZE[31031]:</label>
+					<shadowcolor>black</shadowcolor>
+					<font>font25_title</font>
+				</control>
+				<control type="grouplist">
+					<description>Kodi build version</description>
+					<itemgap>{{ScaleX('10')}}</itemgap>
+					<top>{{ScaleY('80')}}</top>
+					<left>{{ScaleX('1210')}}</left>
+					<width>{{ScaleX('800')}}</width>
+					<height>{{ScaleY('45')}}</height>
+					<orientation>horizontal</orientation>
+					<control type="label">
+						<description>Build label</description>
+						<width>{{ScaleX('auto')}}</width>
+						<height>{{ScaleY('50')}}</height>
+						<aligny>bottom</aligny>
+						<font>font12</font>
+						<textoffsety>{{ScaleY('10')}}</textoffsety>
+						<label>$LOCALIZE[144]</label>
+						<shadowcolor>black</shadowcolor>
+					</control>
+					<control type="label" id="52">
+						<description>Kodi Build Version</description>
+						<height>{{ScaleY('50')}}</height>
+						<aligny>bottom</aligny>
+						<textoffsety>{{ScaleY('10')}}</textoffsety>
+						<font>font12</font>
+						<width>{{ScaleX('auto')}}</width>
+						<textcolor>button_focus</textcolor>
+						<shadowcolor>black</shadowcolor>
+					</control>
+				</control>
+				<control type="grouplist">
+					<description>Build date</description>
+					<itemgap>{{ScaleX('10')}}</itemgap>
+					<top>{{ScaleY('125')}}</top>
+					<left>{{ScaleX('1210')}}</left>
+					<width>{{ScaleX('800')}}</width>
+					<orientation>horizontal</orientation>
+					<control type="label">
+						<description>kodi Compiled Text</description>
+						<width>{{ScaleX('auto')}}</width>
+						<height>{{ScaleY('25')}}</height>
+						<label>$LOCALIZE[174]</label>
+						<font>font12</font>
+						<shadowcolor>black</shadowcolor>
+					</control>
+					<control type="label" id="53">
+						<description>Kodi Build Date</description>
+						<width>{{ScaleX('auto')}}</width>
+						<font>font12</font>
+						<textcolor>button_focus</textcolor>
+						<shadowcolor>black</shadowcolor>
+					</control>
+				</control>
+			</control>
+		</control>
+		<control type="group">
+			<left>{{ScaleX('0')}}</left>
+			<top>{{ScaleY('0')}}</top>
+			<depth>DepthContentPanel</depth>
+			<include>OpenClose_Left</include>
+			<include content="ContentPanel">
+				<param name="width" value="{{ScaleX('480')}}" />
+			</include>
+			<control type="grouplist" id="9000">
+				<left>{{ScaleX('0')}}</left>
+				<top>{{ScaleY('160')}}</top>
+				<width>{{ScaleX('420')}}</width>
+				<height>{{ScaleY('100%')}}</height>
+				<onup>9000</onup>
+				<ondown>9000</ondown>
+				<onright>60</onright>
+				<control type="button" id="95">
+					<description>Button Summary Values</description>
+					<include content="DefaultSettingButton">
+						<param name="height" value="{{ScaleY('88')}}" />
+					</include>
+					<width>{{ScaleX('420')}}</width>
+					<label>$LOCALIZE[20037]</label>
+				</control>
+				<control type="button" id="94">
+					<description>Button Storage</description>
+					<include content="DefaultSettingButton">
+						<param name="height" value="{{ScaleY('88')}}" />
+					</include>
+					<width>{{ScaleX('420')}}</width>
+					<label>$LOCALIZE[13277]</label>
+				</control>
+				<control type="button" id="96">
+					<description>Button Network</description>
+					<include content="DefaultSettingButton">
+						<param name="height" value="{{ScaleY('88')}}" />
+					</include>
+					<width>{{ScaleX('420')}}</width>
+					<label>$LOCALIZE[13279]</label>
+				</control>
+				<control type="button" id="97">
+					<description>Button Video</description>
+					<include content="DefaultSettingButton">
+						<param name="height" value="{{ScaleY('88')}}" />
+					</include>
+					<width>{{ScaleX('420')}}</width>
+					<label>$LOCALIZE[13280]</label>
+				</control>
+				<control type="button" id="98">
+					<description>Button Hardware</description>
+					<include content="DefaultSettingButton">
+						<param name="height" value="{{ScaleY('88')}}" />
+					</include>
+					<width>{{ScaleX('420')}}</width>
+					<label>$LOCALIZE[13281]</label>
+				</control>
+				<control type="button" id="99">
+					<description>Button PVR</description>
+					<include content="DefaultSettingButton">
+						<param name="height" value="{{ScaleY('88')}}" />
+					</include>
+					<width>{{ScaleX('420')}}</width>
+					<label>$LOCALIZE[19191]</label>
+				</control>
+				<control type="button" id="100">
+					<description>Button Privacy policy</description>
+					<include content="DefaultSettingButton">
+						<param name="height" value="{{ScaleY('88')}}" />
+					</include>
+					<width>{{ScaleX('420')}}</width>
+					<label>$LOCALIZE[12389]</label>
+				</control>
+			</control>
+		</control>
+		<include content="TopBar">
+			<param name="breadcrumbs_label" value="$LOCALIZE[130]" />
+		</include>
+		<include>BottomBar</include>
+	</controls>
+</window>

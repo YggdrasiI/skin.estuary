@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<window>
+	<defaultcontrol always="true">2</defaultcontrol>
+	<include>Animation_DialogPopupOpenClose</include>
+	<controls>
+		<control type="button">
+			<description>background close area</description>
+			<left>{{ScaleX('0')}}</left>
+			<top>{{ScaleY('0')}}</top>
+			<width>{{ScaleX('100%')}}</width>
+			<bottom>{{ScaleY('546')}}</bottom>
+			<texturefocus />
+			<texturenofocus />
+			<onclick>Action(close)</onclick>
+		</control>
+		<control type="group">
+			<bottom>{{ScaleY('0')}}</bottom>
+			<height>{{ScaleY('550')}}</height>
+			<control type="image">
+				<left>{{ScaleX('0')}}</left>
+				<width>{{ScaleX('100%')}}</width>
+				<height>{{ScaleY('410')}}</height>
+				<animation effect="fade" start="0" end="100" time="300">WindowOpen</animation>
+				<animation effect="fade" start="100" end="0" time="300">WindowClose</animation>
+				<texture colordiffuse="E6FFFFFF">dialogs/dialog-bg-nobo.png</texture>
+			</control>
+			<control type="textbox">
+				<left>{{ScaleX('0')}}</left>
+				<top>{{ScaleY('1')}}</top>
+				<width>{{ScaleX('1920')}}</width>
+				<height>{{ScaleY('410')}}</height>
+				<align>center</align>
+				<aligny>center</aligny>
+				<font>font45_title</font>
+				<label>$LOCALIZE[31155]</label>
+				<visible>Integer.IsEqual(Container(11).NumItems,0)</visible>
+			</control>
+			<control type="grouplist" id="9001">
+				<orientation>horizontal</orientation>
+				<left>{{ScaleX('0')}}</left>
+				<top>{{ScaleY('-10')}}</top>
+				<width>{{ScaleX('100%')}}</width>
+				<align>center</align>
+				<height>{{ScaleY('100')}}</height>
+				<onup>11</onup>
+				<ondown>11</ondown>
+				<include content="DefaultDialogButton">
+					<param name="id" value="2" />
+					<param name="label" value="$LOCALIZE[294]" />
+					<param name="width" value="{{ScaleX('350')}}" />
+				</include>
+				<include content="DefaultDialogButton">
+					<param name="id" value="3" />
+					<param name="label" value="$LOCALIZE[296]" />
+					<param name="width" value="{{ScaleX('350')}}" />
+				</include>
+				<include content="DefaultDialogButton">
+					<param name="id" value="4" />
+					<param name="label" value="$LOCALIZE[20406]" />
+					<param name="width" value="{{ScaleX('350')}}" />
+					<param name="visible" value="Control.IsEnabled(4)" />
+				</include>
+			</control>
+			<control type="panel" id="11">
+				<left>{{ScaleX('0')}}</left>
+				<top>{{ScaleY('81')}}</top>
+				<width>{{ScaleX('100%')}}</width>
+				<height>{{ScaleY('350')}}</height>
+				<onup>9001</onup>
+				<ondown>9001</ondown>
+				<preloaditems>2</preloaditems>
+				<scrolltime tween="sine">200</scrolltime>
+				<orientation>horizontal</orientation>
+				<itemlayout width="{{ScaleX('360')}}" height="{{ScaleY('340')}}">
+					<control type="group">
+						<left>{{ScaleX('70')}}</left>
+						<control type="image">
+							<left>{{ScaleX('0')}}</left>
+							<top>{{ScaleY('5')}}</top>
+							<width>{{ScaleX('330')}}</width>
+							<height>{{ScaleY('250')}}</height>
+							<aspectratio>scale</aspectratio>
+							<texture border="{{ScaleBorder('4')}}" fallback="DefaultVideo.png">$INFO[ListItem.Art(thumb)]</texture>
+							<bordertexture colordiffuse="border_alpha">colors/black.png</bordertexture>
+							<bordersize>{{ScaleX('4')}}</bordersize>
+						</control>
+						<control type="label">
+							<left>{{ScaleX('20')}}</left>
+							<top>{{ScaleY('255')}}</top>
+							<width>{{ScaleX('290')}}</width>
+							<height>{{ScaleY('40')}}</height>
+							<label>$INFO[ListItem.Label][CR][COLOR grey]$INFO[ListItem.Label2][/COLOR]</label>
+							<font>font12</font>
+							<shadowcolor>text_shadow</shadowcolor>
+							<align>center</align>
+						</control>
+					</control>
+				</itemlayout>
+				<focusedlayout width="{{ScaleX('360')}}" height="{{ScaleY('340')}}">
+					<control type="group">
+						<left>{{ScaleX('70')}}</left>
+						<control type="image">
+							<left>{{ScaleX('0')}}</left>
+							<top>{{ScaleY('5')}}</top>
+							<width>{{ScaleX('330')}}</width>
+							<height>{{ScaleY('250')}}</height>
+							<aspectratio>scale</aspectratio>
+							<texture border="{{ScaleBorder('4')}}" fallback="DefaultVideo.png">$INFO[ListItem.Art(thumb)]</texture>
+							<bordertexture colordiffuse="border_alpha">colors/black.png</bordertexture>
+							<bordersize>{{ScaleX('4')}}</bordersize>
+						</control>
+						<control type="label">
+							<left>{{ScaleX('20')}}</left>
+							<top>{{ScaleY('255')}}</top>
+							<width>{{ScaleX('290')}}</width>
+							<height>{{ScaleY('40')}}</height>
+							<label>$INFO[ListItem.Label][CR][COLOR grey]$INFO[ListItem.Label2][/COLOR]</label>
+							<font>font12</font>
+							<shadowcolor>text_shadow</shadowcolor>
+							<align>center</align>
+						</control>
+						<control type="image">
+							<left>{{ScaleX('0')}}</left>
+							<top>{{ScaleY('5')}}</top>
+							<width>{{ScaleX('330')}}</width>
+							<height>{{ScaleY('250')}}</height>
+							<texture border="{{ScaleBorder('8')}}" colordiffuse="button_focus">buttons/thumbnail_focused.png</texture>
+							<visible>Control.HasFocus(11)</visible>
+						</control>
+					</control>
+				</focusedlayout>
+			</control>
+		</control>
+	</controls>
+</window>

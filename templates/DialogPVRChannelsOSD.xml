@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+	<defaultcontrol always="true">11</defaultcontrol>
+	<controls>
+		<control type="group">
+			<animation effect="fade" start="100" end="0" time="200" tween="sine" condition="$EXP[infodialog_active]">Conditional</animation>
+			<control type="group">
+				<depth>DepthOSD</depth>
+				<include>OpenClose_Left</include>
+				<include content="ContentPanel">
+					<param name="width" value="{{ScaleX('941')}}" />
+				</include>
+				<control type="fixedlist" id="11">
+					<left>{{ScaleX('0')}}</left>
+					<width>{{ScaleX('875')}}</width>
+					<height>{{ScaleY('100%')}}</height>
+					<onleft>PreviousChannelGroup</onleft>
+					<onright>60</onright>
+					<onup>11</onup>
+					<ondown>11</ondown>
+					<pagecontrol>60</pagecontrol>
+					<movement>4</movement>
+					<focusposition>5</focusposition>
+					<scrolltime tween="cubic" easing="out">500</scrolltime>
+					<focusedlayout height="{{ScaleY('90')}}" width="{{ScaleX('1000')}}">
+						<control type="image">
+							<left>{{ScaleX('0')}}</left>
+							<right>{{ScaleX('0')}}</right>
+							<bottom>{{ScaleY('0')}}</bottom>
+							<texture colordiffuse="button_focus">lists/focus.png</texture>
+							<visible>Control.hasFocus(11)</visible>
+						</control>
+						<control type="image">
+							<left>{{ScaleX('770')}}</left>
+							<top>{{ScaleY('10')}}</top>
+							<width>{{ScaleX('90')}}</width>
+							<bottom>{{ScaleY('10')}}</bottom>
+							<aspectratio align="right">keep</aspectratio>
+							<texture>$INFO[listitem.icon]</texture>
+						</control>
+						<control type="progress">
+							<left>{{ScaleX('105')}}</left>
+							<top>{{ScaleY('55')}}</top>
+							<width>{{ScaleX('50')}}</width>
+							<height>{{ScaleY('12')}}</height>
+							<midtexture border="3">progress/texturebg_white.png</midtexture>
+							<visible>ListItem.HasEpg + !ListItem.IsRecording</visible>
+							<info>ListItem.Progress</info>
+						</control>
+						<control type="image">
+							<right>{{ScaleX('15')}}</right>
+							<top>{{ScaleY('9')}}</top>
+							<width>{{ScaleX('40')}}</width>
+							<height>{{ScaleY('40')}}</height>
+							<texture>$VAR[PVRStatusImageVar]</texture>
+						</control>
+						<control type="label">
+							<left>{{ScaleX('105')}}</left>
+							<top>{{ScaleY('5')}}</top>
+							<height>{{ScaleY('90')}}</height>
+							<width>{{ScaleX('600')}}</width>
+							<aligny>top</aligny>
+							<animation effect="slide" start="{{ScaleBorder2('0,0')}}" end="{{ScaleBorder2('0,18')}}" time="0" condition="String.IsEmpty(ListItem.Title)">Conditional</animation>
+							<label>$INFO[ListItem.Label]</label>
+							<font>font14</font>
+							<shadowcolor>text_shadow</shadowcolor>
+						</control>
+						<control type="label">
+							<left>{{ScaleX('165')}}</left>
+							<top>{{ScaleY('45')}}</top>
+							<height>{{ScaleY('90')}}</height>
+							<width>{{ScaleX('580')}}</width>
+							<aligny>top</aligny>
+							<font>font12</font>
+							<label>$INFO[ListItem.Title]</label>
+							<shadowcolor>text_shadow</shadowcolor>
+						</control>
+						<control type="label">
+							<left>{{ScaleX('12')}}</left>
+							<height>{{ScaleY('90')}}</height>
+							<width>{{ScaleX('75')}}</width>
+							<align>center</align>
+							<aligny>center</aligny>
+							<font>font32_title</font>
+							<label>$INFO[ListItem.ChannelNumberLabel]</label>
+							<shadowcolor>text_shadow</shadowcolor>
+						</control>
+					</focusedlayout>
+					<itemlayout height="{{ScaleY('90')}}">
+						<control type="image">
+							<left>{{ScaleX('770')}}</left>
+							<top>{{ScaleY('10')}}</top>
+							<width>{{ScaleX('90')}}</width>
+							<bottom>{{ScaleY('10')}}</bottom>
+							<aspectratio align="right">keep</aspectratio>
+							<texture>$INFO[listitem.icon]</texture>
+						</control>
+						<control type="progress">
+							<left>{{ScaleX('105')}}</left>
+							<top>{{ScaleY('55')}}</top>
+							<width>{{ScaleX('50')}}</width>
+							<height>{{ScaleY('12')}}</height>
+							<colordiffuse>88FFFFFF</colordiffuse>
+							<visible>ListItem.HasEpg + !ListItem.IsRecording</visible>
+							<info>ListItem.Progress</info>
+						</control>
+						<control type="image">
+							<right>{{ScaleX('15')}}</right>
+							<top>{{ScaleY('9')}}</top>
+							<width>{{ScaleX('40')}}</width>
+							<height>{{ScaleY('40')}}</height>
+							<texture>$VAR[PVRStatusImageVar]</texture>
+						</control>
+						<control type="label">
+							<left>{{ScaleX('105')}}</left>
+							<top>{{ScaleY('5')}}</top>
+							<height>{{ScaleY('90')}}</height>
+							<width>{{ScaleX('640')}}</width>
+							<aligny>top</aligny>
+							<label>$INFO[ListItem.Label]</label>
+							<font>font14</font>
+							<animation effect="slide" start="{{ScaleBorder2('0,0')}}" end="{{ScaleBorder2('0,18')}}" time="0" condition="String.IsEmpty(ListItem.Title)">Conditional</animation>
+							<shadowcolor>text_shadow</shadowcolor>
+						</control>
+						<control type="label">
+							<left>{{ScaleX('165')}}</left>
+							<top>{{ScaleY('45')}}</top>
+							<height>{{ScaleY('90')}}</height>
+							<width>{{ScaleX('580')}}</width>
+							<aligny>top</aligny>
+							<font>font12</font>
+							<label>$INFO[ListItem.Title]</label>
+							<shadowcolor>text_shadow</shadowcolor>
+							<textcolor>grey</textcolor>
+						</control>
+						<control type="label">
+							<left>{{ScaleX('12')}}</left>
+							<height>{{ScaleY('90')}}</height>
+							<width>{{ScaleX('75')}}</width>
+							<align>center</align>
+							<aligny>center</aligny>
+							<font>font32_title</font>
+							<label>$INFO[ListItem.ChannelNumberLabel]</label>
+							<textcolor>grey</textcolor>
+							<shadowcolor>text_shadow</shadowcolor>
+						</control>
+					</itemlayout>
+				</control>
+				<control type="scrollbar" id="60">
+					<left>{{ScaleX('868')}}</left>
+					<width>{{ScaleX('12')}}</width>
+					<height>{{ScaleY('100%')}}</height>
+					<onleft>11</onleft>
+					<texturesliderbackground />
+					<onright>NextChannelGroup</onright>
+					<ondown>61</ondown>
+					<onup>61</onup>
+					<animation effect="zoom" start="100,100" end="50,100" center="{{ScaleBorder2('881,0')}}" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(60)">conditional</animation>
+					<orientation>vertical</orientation>
+				</control>
+				<control type="image">
+					<left>{{ScaleX('0')}}</left>
+					<bottom>{{ScaleY('0')}}</bottom>
+					<width>{{ScaleX('880')}}</width>
+					<height>{{ScaleY('115')}}</height>
+					<texture flipy="true">frame/InfoBar.png</texture>
+				</control>
+			</control>
+			<control type="group">
+				<depth>DepthOSD</depth>
+				<include>Animation_TopSlide</include>
+				<control type="image">
+					<left>{{ScaleX('0')}}</left>
+					<width>{{ScaleX('880')}}</width>
+					<height>{{ScaleY('110')}}</height>
+					<texture>frame/InfoBar.png</texture>
+				</control>
+				<control type="label" id="2">
+					<description>header label</description>
+					<textoffsetx>{{ScaleX('40')}}</textoffsetx>
+					<width>{{ScaleX('830')}}</width>
+					<height>{{ScaleY('70')}}</height>
+					<font>font45</font>
+					<aligny>center</aligny>
+					<label>&lt; $INFO[VideoPlayer.ChannelGroup] &gt;</label>
+					<shadowcolor>black</shadowcolor>
+				</control>
+			</control>
+		</control>
+	</controls>
+</window>

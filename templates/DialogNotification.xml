@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+	<zorder>3</zorder>
+	<controls>
+		<control type="group">
+			<depth>DepthMax</depth>
+			<top>{{ScaleY('85')}}</top>
+			<right>{{ScaleX('0')}}</right>
+			<width>{{ScaleX('640')}}</width>
+			<include>OpenClose_Right</include>
+			<visible>String.IsEmpty(Window(Home).Property(script.cinemavision.running))</visible>
+			<control type="image">
+				<left>{{ScaleX('0')}}</left>
+				<top>{{ScaleY('0')}}</top>
+				<width>{{ScaleX('640')}}</width>
+				<height>{{ScaleY('160')}}</height>
+				<texture>dialogs/dialog-bg-nobo.png</texture>
+				<bordertexture border="{{ScaleX('21')}}">overlays/shadow.png</bordertexture>
+				<bordersize>{{ScaleX('20')}}</bordersize>
+			</control>
+			<control type="image" id="400">
+				<description>avatar</description>
+				<left>{{ScaleX('25')}}</left>
+				<top>{{ScaleY('25')}}</top>
+				<width>{{ScaleX('110')}}</width>
+				<height>{{ScaleY('110')}}</height>
+				<aspectratio>stretch</aspectratio>
+			</control>
+			<control type="fadelabel" id="401">
+				<description>Line 1 Label</description>
+				<left>{{ScaleX('150')}}</left>
+				<top>{{ScaleY('40')}}</top>
+				<width>{{ScaleX('450')}}</width>
+				<height>{{ScaleY('18')}}</height>
+				<font>font37</font>
+				<aligny>center</aligny>
+				<scrollout>false</scrollout>
+				<pauseatend>2000</pauseatend>
+			</control>
+			<control type="textbox" id="402">
+				<description>Line 2 Label</description>
+				<left>{{ScaleX('151')}}</left>
+				<top>{{ScaleY('68')}}</top>
+				<width>{{ScaleX('450')}}</width>
+				<height>{{ScaleY('60')}}</height>
+				<font>font27_narrow</font>
+				<aligny>center</aligny>
+			</control>
+		</control>
+	</controls>
+</window>

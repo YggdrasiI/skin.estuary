@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+	<defaultcontrol always="true">50</defaultcontrol>
+	<menucontrol>9000</menucontrol>
+	<views>50</views>
+	<menucontrol>6053</menucontrol>
+	<controls>
+		<include>DefaultBackground</include>
+		<control type="group">
+			<animation effect="fade" start="100" end="0" time="200" tween="sine" condition="$EXP[infodialog_active]">Conditional</animation>
+			<control type="group">
+				<visible>Control.IsVisible(50)</visible>
+				<include>OpenClose_Left</include>
+				<include>Visible_Left</include>
+				<control type="fixedlist" id="50">
+					<left>{{ScaleX('0')}}</left>
+					<top>{{ScaleY('list_y_offset')}}</top>
+					<right>{{ScaleX('918')}}</right>
+					<bottom>{{ScaleY('list_y_offset')}}</bottom>
+					<onup>50</onup>
+					<ondown>50</ondown>
+					<onleft>9000</onleft>
+					<onright>77</onright>
+					<movement>2</movement>
+					<focusposition>3</focusposition>
+					<pagecontrol>77</pagecontrol>
+					<scrolltime>200</scrolltime>
+					<itemlayout height="{{ScaleY('100')}}" width="{{ScaleX('tvchannelslist_width')}}">
+						<control type="label">
+							<visible>String.IsEmpty(ListItem.Date)</visible>
+							<left>{{ScaleX('120')}}</left>
+							<top>{{ScaleY('0')}}</top>
+							<right>{{ScaleX('30')}}</right>
+							<height>{{ScaleY('100')}}</height>
+							<font>font36_title</font>
+							<aligny>center</aligny>
+							<label>$INFO[ListItem.Label]</label>
+						</control>
+						<control type="group">
+							<visible>!String.IsEmpty(ListItem.Date)</visible>
+							<control type="image">
+								<left>{{ScaleX('25')}}</left>
+								<top>{{ScaleY('10')}}</top>
+								<width>{{ScaleX('80')}}</width>
+								<height>{{ScaleY('80')}}</height>
+								<texture fallback="DefaultTVShows.png">$INFO[Listitem.ActualIcon]</texture>
+								<aspectratio>keep</aspectratio>
+								<visible>!String.IsEmpty(ListItem.ActualIcon)</visible>
+							</control>
+							<control type="label">
+								<left>{{ScaleX('120')}}</left>
+								<top>{{ScaleY('10')}}</top>
+								<right>{{ScaleX('30')}}</right>
+								<height>{{ScaleY('100')}}</height>
+								<aligny>top</aligny>
+								<label>$INFO[ListItem.ChannelName][COLOR grey]$INFO[ListItem.Label, - ][/COLOR]</label>
+							</control>
+							<control type="label">
+								<left>{{ScaleX('120')}}</left>
+								<top>{{ScaleY('20')}}</top>
+								<width>{{ScaleX('350')}}</width>
+								<height>{{ScaleY('100')}}</height>
+								<font>font12</font>
+								<aligny>center</aligny>
+								<label>$INFO[ListItem.Date]</label>
+							</control>
+						</control>
+					</itemlayout>
+					<focusedlayout height="{{ScaleY('100')}}" width="{{ScaleX('tvchannelslist_width')}}">
+						<control type="image">
+							<left>{{ScaleX('0')}}</left>
+							<top>{{ScaleY('0')}}</top>
+							<right>{{ScaleX('0')}}</right>
+							<height>{{ScaleY('101')}}</height>
+							<texture colordiffuse="button_focus">lists/focus.png</texture>
+							<visible>Control.HasFocus(50)</visible>
+						</control>
+						<control type="label">
+							<visible>String.IsEmpty(ListItem.Date)</visible>
+							<left>{{ScaleX('120')}}</left>
+							<top>{{ScaleY('0')}}</top>
+							<right>{{ScaleX('30')}}</right>
+							<height>{{ScaleY('100')}}</height>
+							<font>font36_title</font>
+							<aligny>center</aligny>
+							<label>$INFO[ListItem.Label]</label>
+						</control>
+						<control type="group">
+							<visible>!String.IsEmpty(ListItem.Date)</visible>
+							<control type="image">
+								<left>{{ScaleX('25')}}</left>
+								<top>{{ScaleY('10')}}</top>
+								<width>{{ScaleX('80')}}</width>
+								<height>{{ScaleY('80')}}</height>
+								<texture fallback="DefaultTVShows.png">$INFO[Listitem.ActualIcon]</texture>
+								<aspectratio>keep</aspectratio>
+								<visible>!String.IsEmpty(ListItem.ActualIcon)</visible>
+							</control>
+							<control type="label">
+								<left>{{ScaleX('120')}}</left>
+								<top>{{ScaleY('10')}}</top>
+								<right>{{ScaleX('30')}}</right>
+								<height>{{ScaleY('100')}}</height>
+								<aligny>top</aligny>
+								<label>$INFO[ListItem.ChannelName]$INFO[ListItem.Label, - ]</label>
+							</control>
+							<control type="label">
+								<left>{{ScaleX('120')}}</left>
+								<top>{{ScaleY('20')}}</top>
+								<width>{{ScaleX('350')}}</width>
+								<height>{{ScaleY('100')}}</height>
+								<font>font12</font>
+								<aligny>center</aligny>
+								<label>$INFO[ListItem.Date]</label>
+							</control>
+						</control>
+					</focusedlayout>
+				</control>
+			</control>
+			<control type="group">
+				<depth>DepthContentPanel</depth>
+				<width>{{ScaleX('870')}}</width>
+				<right>{{ScaleX('0')}}</right>
+				<include>OpenClose_Right</include>
+				<include content="ContentPanel">
+					<param name="left" value="{{ScaleX('-68')}}" />
+					<param name="width" value="{{ScaleX('970')}}" />
+					<param name="top" value="{{ScaleY('-20')}}" />
+					<param name="flipx" value="true" />
+				</include>
+				<control type="scrollbar" id="77">
+					<left>{{ScaleX('-45')}}</left>
+					<top>{{ScaleY('0')}}</top>
+					<width>{{ScaleX('12')}}</width>
+					<height>{{ScaleY('100%')}}</height>
+					<onleft>50</onleft>
+					<onright>50</onright>
+					<orientation>vertical</orientation>
+					<animation effect="zoom" start="100,100" end="50,100" center="{{ScaleBorder2('-45,0')}}" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(77)">conditional</animation>
+				</control>
+				<include>PVRInfoPanel</include>
+			</control>
+			<include content="TopBar">
+				<param name="breadcrumbs_label" value="$VAR[BreadcrumbsPVRSearchVar]" />
+			</include>
+			<include content="BottomBar">
+				<param name="info_visible" value="true" />
+			</include>
+			<control type="group">
+				<include>MediaMenuCommon</include>
+				<include>PVRSideBar</include>
+			</control>
+		</control>
+	</controls>
+</window>

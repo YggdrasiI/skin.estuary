@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+	<defaultcontrol always="true">11</defaultcontrol>
+	<controls>
+		<control type="group">
+			<depth>DepthOSD</depth>
+			<animation effect="fade" start="100" end="0" time="200" tween="sine" condition="$EXP[infodialog_active]">Conditional</animation>
+			<control type="group">
+				<include>OpenClose_Left</include>
+				<include content="ContentPanel">
+					<param name="width" value="{{ScaleX('840')}}" />
+				</include>
+				<control type="fixedlist" id="11">
+					<left>{{ScaleX('0')}}</left>
+					<width>{{ScaleX('1600')}}</width>
+					<height>{{ScaleY('100%')}}</height>
+					<onleft>60</onleft>
+					<onright>60</onright>
+					<onup>11</onup>
+					<ondown>11</ondown>
+					<pagecontrol>60</pagecontrol>
+					<scrolltime tween="cubic" easing="out">500</scrolltime>
+					<movement>4</movement>
+					<focusposition>5</focusposition>
+					<itemlayout height="{{ScaleY('90')}}" width="{{ScaleX('1600')}}">
+						<control type="label">
+							<left>{{ScaleX('20')}}</left>
+							<width>{{ScaleX('150')}}</width>
+							<bottom>{{ScaleY('0')}}</bottom>
+							<aligny>center</aligny>
+							<textcolor>grey</textcolor>
+							<label>$INFO[ListItem.StartTime]</label>
+						</control>
+						<control type="label">
+							<left>{{ScaleX('150')}}</left>
+							<width>{{ScaleX('610')}}</width>
+							<bottom>{{ScaleY('0')}}</bottom>
+							<align>right</align>
+							<aligny>center</aligny>
+							<label>$INFO[ListItem.Label]</label>
+						</control>
+					</itemlayout>
+					<focusedlayout height="{{ScaleY('90')}}" width="{{ScaleX('1600')}}">
+						<control type="image">
+							<left>{{ScaleX('0')}}</left>
+							<width>{{ScaleX('780')}}</width>
+							<bottom>{{ScaleY('0')}}</bottom>
+							<texture colordiffuse="button_focus">lists/focus.png</texture>
+							<visible>Control.HasFocus(11)</visible>
+							<animation effect="fade" start="100" end="0" time="0">UnFocus</animation>
+						</control>
+						<control type="label">
+							<left>{{ScaleX('20')}}</left>
+							<width>{{ScaleX('150')}}</width>
+							<bottom>{{ScaleY('0')}}</bottom>
+							<aligny>center</aligny>
+							<label>$INFO[ListItem.StartTime]</label>
+						</control>
+						<control type="label">
+							<left>{{ScaleX('150')}}</left>
+							<width>{{ScaleX('610')}}</width>
+							<bottom>{{ScaleY('0')}}</bottom>
+							<align>right</align>
+							<aligny>center</aligny>
+							<label>$INFO[ListItem.Label]</label>
+						</control>
+						<control type="group">
+							<visible>!String.IsEmpty(ListItem.Plot) + Control.HasFocus(11)</visible>
+							<animation effect="fade" start="0" end="100" time="200">Focus</animation>
+							<control type="image">
+								<left>{{ScaleX('782')}}</left>
+								<top>{{ScaleY('-100')}}</top>
+								<width>{{ScaleX('900')}}</width>
+								<height>{{ScaleY('350')}}</height>
+								<texture border="{{ScaleBorder('40')}}">buttons/dialogbutton-nofo.png</texture>
+							</control>
+							<control type="textbox">
+								<left>{{ScaleX('815')}}</left>
+								<top>{{ScaleY('-70')}}</top>
+								<width>{{ScaleX('760')}}</width>
+								<height>{{ScaleY('290')}}</height>
+								<label>$INFO[ListItem.Plot]</label>
+							</control>
+						</control>
+					</focusedlayout>
+				</control>
+				<control type="scrollbar" id="60">
+					<left>{{ScaleX('768')}}</left>
+					<width>{{ScaleX('12')}}</width>
+					<height>{{ScaleY('100%')}}</height>
+					<onleft>11</onleft>
+					<texturesliderbackground />
+					<onright>NextChannelGroup</onright>
+					<ondown>61</ondown>
+					<onup>61</onup>
+					<animation effect="zoom" start="100,100" end="50,100" center="{{ScaleBorder2('780,0')}}" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(60)">conditional</animation>
+					<orientation>vertical</orientation>
+				</control>
+			</control>
+			<control type="image">
+				<left>{{ScaleX('0')}}</left>
+				<bottom>{{ScaleY('0')}}</bottom>
+				<width>{{ScaleX('100%')}}</width>
+				<height>{{ScaleY('115')}}</height>
+				<texture flipy="true">frame/InfoBar.png</texture>
+			</control>
+			<control type="group">
+				<include>Animation_TopSlide</include>
+				<control type="image">
+					<left>{{ScaleX('0')}}</left>
+					<width>{{ScaleX('780')}}</width>
+					<height>{{ScaleY('110')}}</height>
+					<texture>frame/InfoBar.png</texture>
+				</control>
+				<control type="label" id="2">
+					<description>header label</description>
+					<textoffsetx>{{ScaleX('40')}}</textoffsetx>
+					<width>{{ScaleX('1300')}}</width>
+					<height>{{ScaleY('70')}}</height>
+					<font>font45</font>
+					<aligny>center</aligny>
+					<label>$LOCALIZE[19069]$INFO[Container(11).ListItem.StartDate, - ]</label>
+					<shadowcolor>black</shadowcolor>
+				</control>
+			</control>
+		</control>
+	</controls>
+</window>
