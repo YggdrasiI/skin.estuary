@@ -126,45 +126,40 @@
 					<align>center</align>
 					<control type="textbox">
 						<width>{{ScaleX('100%')}}</width>
-						<height min="{{ScaleY('0')}}" max="{{ScaleY('800')}}">{{ScaleY('auto')}}</height>
+						<height min="{{ScaleY('0')}}" max="{{ScaleY('300')}}">{{ScaleY('auto')}}</height>
 						<label>$PARAM[text_label]</label>
 						<align>center</align>
-						<font>font12</font>
+						<font>font14</font>
 					</control>
 					<control type="grouplist" id="$PARAM[button_id]567">
-						<width>{{ScaleX('1200')}}</width>
-						<height>{{ScaleX('{{ 2*( 110 + {ImageWidgetButtonExtraHeight}) }}')}}</height>
+						<width>{{ScaleX('100%')}}</width>
 						<onup>9000</onup>
 						<ondown>9000</ondown>
-						<orientation>vertical</orientation>
+						<orientation>horizontal</orientation>
 						<align>center</align>
-						<aligny>top</aligny>
-						<itemgap>{{ ScaleY('-{ImageWidgetButtonExtraHeight}') }}</itemgap>
 						<onleft>9000</onleft>
 						<control type="button" id="$PARAM[button_id]">
 							<width>{{ScaleX('auto')}}</width>
-							<height>{{ScaleY('{{ 110 + {ImageWidgetButtonExtraHeight} }}')}}</height>
+							<height>{{ScaleY('110')}}</height>
 							<label>$PARAM[button_label]</label>
-							<textoffsetx>40</textoffsetx>
+							<textoffsetx>{{ScaleX('40')}}</textoffsetx>
 							<onclick>$PARAM[button_onclick]</onclick>
 							<align>center</align>
 							<texturefocus border="23" colordiffuse="button_focus">buttons/dialogbutton-fo.png</texturefocus>
 							<texturenofocus border="40">buttons/dialogbutton-nofo.png</texturenofocus>
 							<visible>$PARAM[visible_1]</visible>
-							<font>font12</font>
 						</control>
 						<control type="button" id="$PARAM[button_id]568">
 							<width>{{ScaleX('auto')}}</width>
-							<height>{{ScaleY('{{ 110 + {ImageWidgetButtonExtraHeight} }}')}}</height>
+							<height>{{ScaleY('110')}}</height>
 							<label>$PARAM[button2_label]</label>
-							<textoffsetx>40</textoffsetx>
+							<textoffsetx>{{ScaleX('40')}}</textoffsetx>
 							<onclick>$PARAM[button2_onclick]</onclick>
 							<onclick>SetFocus(9000)</onclick>
 							<align>center</align>
 							<texturefocus border="23" colordiffuse="button_focus">buttons/dialogbutton-fo.png</texturefocus>
 							<texturenofocus border="40">buttons/dialogbutton-nofo.png</texturenofocus>
 							<visible>$PARAM[visible_2]</visible>
-							<font>font12</font>
 						</control>
 					</control>
 				</control>

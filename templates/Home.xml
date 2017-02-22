@@ -33,7 +33,7 @@
 		<control type="group">
 			<animation effect="fade" start="100" end="0" time="200" tween="sine" condition="$EXP[infodialog_active]">Conditional</animation>
 			<control type="group" id="2000">
-				<left>{{ScaleX('{{ 462 + {HomeLeftPanelExtraWidth} }}')}}</left>
+				<left>{{ScaleX('462')}}</left>
 				<animation type="Conditional" condition="Control.IsVisible(20000)" reversible="false">
 					<effect type="slide" end="{{ScaleBorder2('0,20')}}" time="60" tween="sine" />
 					<effect type="slide" end="{{ScaleBorder2('0,-20')}}" time="180" tween="sine" delay="80" />
@@ -717,12 +717,12 @@
 				<depth>DepthContentPanel</depth>
 				<include>OpenClose_Left</include>
 				<include content="ContentPanel">
-					<param name="width" value="{{ScaleX('{{ 522 + {HomeLeftPanelExtraWidth} - 1 }}')}}" />
+					<param name="width" value="{{ScaleX('522')}}" />
 				</include>
 				<control type="fixedlist" id="9000">
 					<left>{{ScaleX('0')}}</left>
 					<top>{{ScaleY('240')}}</top>
-					<width>{{ScaleX('{{ 462 + {HomeLeftPanelExtraWidth} }}')}}</width>
+					<width>{{ScaleX('462')}}</width>
 					<bottom>{{ScaleY('-10')}}</bottom>
 					<movement>6</movement>
 					<focusposition>1</focusposition>
@@ -737,7 +737,7 @@
 							<control type="image">
 								<left>{{ScaleX('0')}}</left>
 								<top>{{ScaleY('0')}}</top>
-								<width>{{ScaleX('{{ 462 + {HomeLeftPanelExtraWidth} }}')}}</width>
+								<width>{{ScaleX('462')}}</width>
 								<height>{{ScaleY('95')}}</height>
 								<texture colordiffuse="button_focus">lists/focus.png</texture>
 								<animation effect="fade" start="100" end="0" time="0" condition="[!Control.HasFocus(9000) + !ControlGroup(700).HasFocus] | System.HasModalDialog">Conditional</animation>
@@ -902,8 +902,8 @@
 					<orientation>horizontal</orientation>
 					<itemgap>{{ScaleX('0')}}</itemgap>
 					<left>{{ScaleX('-8')}}</left>
-					<width>{{ScaleX('{{ 480 + {HomeLeftPanelExtraWidth} }}')}}</width>
-					<height>{{ScaleY('{{ 110 + 0 }}')}}</height>
+					<width>{{ScaleX('480')}}</width>
+					<height>{{ScaleY('110')}}</height>
 					<top>{{ScaleY('100')}}</top>
 					<onup>SetFocus(9000)</onup>
 					<onup>PageDown</onup>

@@ -851,7 +851,7 @@
 					<description>Left side of top bar</description>
 					<width>{{ScaleX('900')}}</width>
 					<top>{{ScaleY('-7')}}</top>
-					<height>{{ScaleY('{{ 100 + {InfoBarExtraHeight} }}')}}</height>
+					<height>{{ScaleY('100')}}</height>
 					<orientation>horizontal</orientation>
 					<usecontrolcoords>true</usecontrolcoords>
 					<animation effect="fade" start="0" end="100" time="300">WindowOpen</animation>

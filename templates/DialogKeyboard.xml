@@ -417,7 +417,7 @@
 						<textureradioonnofocus colordiffuse="FFFFFFFF">icons/keyboard/letters.png</textureradioonnofocus>
 						<textureradioofffocus colordiffuse="FFFFFFFF">icons/keyboard/symbols.png</textureradioofffocus>
 						<textureradiooffnofocus colordiffuse="FFFFFFFF">icons/keyboard/symbols.png</textureradiooffnofocus>
-						<radioposx>{{ScaleX('32')}}</radioposx>
+						<radioposx>{{ScaleX('32l')}}</radioposx>
 						<radiowidth>{{ScaleX('56')}}</radiowidth>
 						<radioheight>{{ScaleY('36')}}</radioheight>
 					</control>

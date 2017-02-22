@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <includes>
 	<include name="MediaMenuItemsCommon">
-		<width>{{ScaleX('{{ 470 + {MediaMenuBladeExtraWidth} }}')}}</width>
+		<width>{{ScaleX('470')}}</width>
 		<textoffsetx>{{ScaleX('20')}}</textoffsetx>
 		<top>{{ScaleY('0')}}</top>
-		<height>{{ScaleY('{{ 80 + {MediaMenuItemExtraHeight} }}')}}</height>
-		<radioposx>{{ScaleX('{{ 370 + {MediaMenuBladeExtraWidth} }}')}}</radioposx>
+		<height>{{ScaleY('80')}}</height>
+		<radioposx>{{ScaleX('370')}}</radioposx>
 		<aligny>center</aligny>
 		<invalidcolor>invalid</invalidcolor>
 		<texturefocus colordiffuse="button_focus">lists/focus.png</texturefocus>
@@ -49,7 +49,7 @@
 			<control type="grouplist" id="9000">
 				<top>{{ScaleY('50')}}</top>
 				<left>{{ScaleX('0')}}</left>
-				<width>{{ScaleX('{{ 470 + {MediaMenuBladeExtraWidth} }}')}}</width>
+				<width>{{ScaleX('470')}}</width>
 				<height>{{ScaleY('100%')}}</height>
 				<onleft>9000</onleft>
 				<onup>9000</onup>
@@ -65,7 +65,7 @@
 						<label>$LOCALIZE[31063]</label>
 					</control>
 					<control type="label">
-						<width>{{ScaleX('{{ 470 + {MediaMenuBladeExtraWidth} }}')}}</width>
+						<width>{{ScaleX('470')}}</width>
 						<textoffsetx>{{ScaleX('20')}}</textoffsetx>
 						<textoffsety>{{ScaleY('15')}}</textoffsety>
 						<height>{{ScaleY('50')}}</height>
@@ -230,11 +230,11 @@
 		</definition>
 	</include>
 	<include name="MediaMenuLabelCommon">
-		<width>{{ScaleX('{{ 470 + {MediaMenuBladeExtraWidth} }}')}}</width>
+		<width>{{ScaleX('470')}}</width>
 		<textoffsetx>{{ScaleX('20')}}</textoffsetx>
-		<textoffsety>{{ScaleY('{{ 15 - {MediaMenuItemExtraHeight} }}')}}</textoffsety>
-		<height>{{ScaleY('{{ 50 + {MediaMenuItemExtraHeight} }}')}}</height>
-		<radioposx>{{ScaleX('{{ 300 + {MediaMenuBladeExtraWidth}/2 }}')}}</radioposx>
+		<textoffsety>{{ScaleY('15')}}</textoffsety>
+		<height>{{ScaleY('50')}}</height>
+		<radioposx>{{ScaleX('300')}}</radioposx>
 		<font>font25_title</font>
 		<aligny>top</aligny>
 		<textcolor>button_focus</textcolor>
@@ -242,9 +242,9 @@
 	<include name="MediaMenuCommon">
 		<include>OpenClose_Left</include>
 		<depth>DepthSideBlade</depth>
-		<left>{{ScaleX('{{ -(520 + {MediaMenuBladeExtraWidth2}) }}')}}</left>
+		<left>{{ScaleX('-520')}}</left>
 		<animation type="Conditional" condition="$EXP[sidebar_visible]" reversible="true">
-			<effect type="slide" start="{{ScaleBorder2('0')}}" end="{{ScaleBorder2('{{ 520 + {MediaMenuBladeExtraWidth2} }}')}}" time="400" tween="cubic" easing="out" />
+			<effect type="slide" start="{{ScaleBorder2('0')}}" end="{{ScaleBorder2('520')}}" time="400" tween="cubic" easing="out" />
 		</animation>
 		<control type="image">
 			<width>{{ScaleX('4000')}}</width>
@@ -257,7 +257,7 @@
 		<control type="image">
 			<left>{{ScaleX('0')}}</left>
 			<top>{{ScaleY('0')}}</top>
-			<width>{{ScaleX('{{ 520 + {MediaMenuBladeExtraWidth2} }}')}}</width>
+			<width>{{ScaleX('520')}}</width>
 			<height>{{ScaleY('100%')}}</height>
 			<texture border="{{ScaleBorder('0,0,52,0')}}">lists/panel-mediamenu.png</texture>
 		</control>
@@ -281,7 +281,7 @@
 				<itemgap>{{ScaleX('-17')}}</itemgap>
 				<left>$PARAM[left]</left>
 				<onleft>14100</onleft>
-				<width>{{ScaleX('{{ 450 + {MediaMenuBladeExtraWidth} }}')}}</width>
+				<width>{{ScaleX('450')}}</width>
 				<visible>Player.HasMedia + [$EXP[sidebar_visible]]</visible>
 				<visible>!System.HasModalDialog</visible>
 				<include content="BottomMainMenuToggleItem">
@@ -314,7 +314,7 @@
 		<definition>
 			<left>{{ScaleX('0')}}</left>
 			<top>{{ScaleY('100')}}</top>
-			<width>{{ScaleX('{{ 470 + {MediaMenuBladeExtraWidth} }}')}}</width>
+			<width>{{ScaleX('470')}}</width>
 			<height>{{ScaleY('100%')}}</height>
 			<onleft>9000</onleft>
 			<onup>9000</onup>

@@ -80,13 +80,13 @@
 				<description>Rules List Control</description>
 				<left>{{ScaleX('740')}}</left>
 				<top>{{ScaleY('115')}}</top>
-				<width>{{ScaleX('{{ 600 + {DialogExtraWidth} }}')}}</width>
+				<width>{{ScaleX('600')}}</width>
 				<height>{{ScaleY('480')}}</height>
 				<onleft>500</onleft>
 				<onright>9001</onright>
 				<orientation>vertical</orientation>
 				<include content="DefaultSimpleListLayout">
-					<param name="width" value="{{ScaleX('{{ 600 + {DialogExtraWidth} }}')}}" />
+					<param name="width" value="{{ScaleX('600')}}" />
 					<param name="list_id" value="10" />
 				</include>
 			</control>

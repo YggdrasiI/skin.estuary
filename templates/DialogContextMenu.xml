@@ -31,7 +31,7 @@
 			<description>background image</description>
 			<left>{{ScaleX('0')}}</left>
 			<top>{{ScaleY('0')}}</top>
-			<width>{{ScaleX('{{ 450 + {DialogExtraWidth} }}')}}</width>
+			<width>{{ScaleX('450')}}</width>
 			<height>{{ScaleY('780')}}</height>
 			<texture colordiffuse="dialog_tint">colors/white.png</texture>
 		</control>
@@ -39,7 +39,7 @@
 			<description>grouplist for context buttons</description>
 			<left>{{ScaleX('0')}}</left>
 			<top>{{ScaleY('0')}}</top>
-			<width>{{ScaleX('{{ 450 + {DialogExtraWidth} }}')}}</width>
+			<width>{{ScaleX('450')}}</width>
 			<height max="780">auto</height>
 			<usecontrolcoords>true</usecontrolcoords>
 		</control>
@@ -47,7 +47,7 @@
 			<description>button template</description>
 			<left>{{ScaleX('0')}}</left>
 			<top></top>
-			<width>{{ScaleX('{{ 450 + {DialogExtraWidth} }}')}}</width>
+			<width>{{ScaleX('450')}}</width>
 			<height>{{ScaleY('65')}}</height>
 			<align>center</align>
 			<texturefocus colordiffuse="button_focus">lists/focus.png</texturefocus>
@@ -55,7 +55,7 @@
 		</control>
 		<include content="UpDownArrows">
 			<param name="container_id" value="996" />
-			<param name="posx" value="{{ScaleX('{{ 201 + {DialogExtraWidth} }}')}}" />
+			<param name="posx" value="{{ScaleX('201')}}" />
 			<param name="up_posy" value="{{ScaleY('-40')}}" />
 			<param name="down_posy" value="{{ScaleY('798')}}" />
 		</include>

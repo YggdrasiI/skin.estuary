@@ -275,7 +275,7 @@
 	<include name="ButtonMenuList">
 		<left>{{ScaleX('0')}}</left>
 		<top>{{ScaleY('80')}}</top>
-		<width>{{ScaleX('{{ 600 + {DialogExtraWidth} }}')}}</width>
+		<width>{{ScaleX('600')}}</width>
 		<height>{{ScaleY('700')}}</height>
 		<onleft>9000</onleft>
 		<onright>9000</onright>
@@ -286,7 +286,7 @@
 			<control type="image">
 				<left>{{ScaleX('0')}}</left>
 				<top>{{ScaleY('0')}}</top>
-				<width>{{ScaleX('{{ 600 + {DialogExtraWidth} }}')}}</width>
+				<width>{{ScaleX('600')}}</width>
 				<height>{{ScaleY('70')}}</height>
 				<texture colordiffuse="dialog_tint">colors/white.png</texture>
 			</control>
@@ -294,7 +294,7 @@
 				<left>{{ScaleX('0')}}</left>
 				<textoffsetx>{{ScaleX('20')}}</textoffsetx>
 				<top>{{ScaleY('0')}}</top>
-				<width>{{ScaleX('{{ 600 + {DialogExtraWidth} }}')}}</width>
+				<width>{{ScaleX('600')}}</width>
 				<height>{{ScaleY('70')}}</height>
 				<align>center</align>
 				<aligny>center</aligny>
@@ -306,14 +306,14 @@
 			<control type="image">
 				<left>{{ScaleX('0')}}</left>
 				<top>{{ScaleY('0')}}</top>
-				<width>{{ScaleX('{{ 600 + {DialogExtraWidth} }}')}}</width>
+				<width>{{ScaleX('600')}}</width>
 				<height>{{ScaleY('70')}}</height>
 				<texture colordiffuse="dialog_tint">colors/white.png</texture>
 			</control>
 			<control type="image">
 				<left>{{ScaleX('0')}}</left>
 				<top>{{ScaleY('0')}}</top>
-				<width>{{ScaleX('{{ 600 + {DialogExtraWidth} }}')}}</width>
+				<width>{{ScaleX('600')}}</width>
 				<height>{{ScaleY('70')}}</height>
 				<texture colordiffuse="button_focus">lists/focus.png</texture>
 			</control>
@@ -321,7 +321,7 @@
 				<left>{{ScaleX('0')}}</left>
 				<textoffsetx>{{ScaleX('20')}}</textoffsetx>
 				<top>{{ScaleY('0')}}</top>
-				<width>{{ScaleX('{{ 600 + {DialogExtraWidth} }}')}}</width>
+				<width>{{ScaleX('600')}}</width>
 				<height>{{ScaleY('70')}}</height>
 				<align>center</align>
 				<aligny>center</aligny>

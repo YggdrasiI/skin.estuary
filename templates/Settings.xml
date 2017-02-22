@@ -16,20 +16,19 @@
 			<visible>!Player.HasMedia + !String.IsEmpty(Skin.String(HomeFanart.path))</visible>
 		</control>
 		<control type="panel" id="9000">
-			<top>{{ScaleY('{{ 100 + 50 + {InfoBarExtraHeight} }}')}}</top>
 			<centerleft>50%</centerleft>
-			<width>{{ScaleX('{{ 3 *(430 + {SettingsItemExtraWidth}) }}')}}</width>
+			<width>{{ScaleX('1720')}}</width>
 			<centertop>50%</centertop>
-			<height>{{int(ScaleY('{{ 3 * (290 + {SettingsItemExtraHeight}) }}')) - 10}}</height><!-- - 10 to invoke scrolling earlier --> 
+			<height>{{ScaleY('870')}}</height>
 			<onleft>9000</onleft>
 			<onright>9000</onright>
 			<onup>9000</onup>
 			<ondown>9000</ondown>
 			<include>OpenClose_Right</include>
-			<itemlayout height="{{ScaleY('{{ 290 + {SettingsItemExtraHeight} }}')}}" width="{{ScaleX('{{ 430 + {SettingsItemExtraWidth} }}')}}">
+			<itemlayout height="{{ScaleY('290')}}" width="{{ScaleX('430')}}">
 				<control type="image">
-					<width>{{ScaleX('{{ 430 + {SettingsItemExtraWidth} }}')}}</width>
-					<height>{{ScaleY('{{ 270 + {SettingsItemExtraHeight} }}')}}</height>
+					<width>{{ScaleX('430')}}</width>
+					<height>{{ScaleY('270')}}</height>
 					<texture>dialogs/dialog-bg-nobo.png</texture>
 					<bordertexture border="{{ScaleX('21')}}">overlays/shadow.png</bordertexture>
 					<bordersize>{{ScaleX('20')}}</bordersize>
@@ -37,8 +36,8 @@
 				<control type="image">
 					<left>{{ScaleX('20')}}</left>
 					<top>{{ScaleY('180')}}</top>
-					<width>{{int(ScaleX('{{ 390 + {SettingsItemExtraWidth} }}', True)) + 1}}</width>
-					<height>{{int(ScaleY('{{ 70 + {SettingsItemExtraHeight} }}', True)) + 1}}</height>
+					<width>{{ScaleX('390')}}</width>
+					<height>{{ScaleY('70')}}</height>
 					<texture colordiffuse="border_alpha">colors/black.png</texture>
 				</control>
 				<control type="image">
@@ -52,33 +51,32 @@
 				</control>
 				<control type="label">
 					<left>{{ScaleX('30')}}</left>
-					<top>{{ScaleY('180', True)}}</top>
-					<width>{{ScaleX('{{ 370 + {SettingsItemExtraWidth} }}', True)}}</width>
-					<height>{{ScaleY('{{ 70 + {SettingsItemExtraHeight} }}', True)}}</height>
+					<top>{{ScaleY('190')}}</top>
+					<width>{{ScaleX('370')}}</width>
+					<height>{{ScaleY('400')}}</height>
 					<label>$INFO[ListItem.Label]</label>
 					<align>center</align>
-					<aligny>center</aligny>
 				</control>
 			</itemlayout>
-			<focusedlayout height="{{ScaleY('{ 290 + {SettingsItemExtraHeight} }}')}}" width="{{ScaleX('{{ 430 + {SettingsItemExtraWidth} }}')}}">
+			<focusedlayout height="{{ScaleY('290')}}" width="{{ScaleX('430')}}">
 				<control type="group">
 					<depth>DepthContentPopout</depth>
 					<animation type="Focus" reversible="false">
-						<effect type="zoom" center="{{ScaleBorder2('{{ 200 + {SettingsItemExtraWidth}/2 }},{{ 125 + {SettingsItemExtraHeight}/2 }}')}}" start="100" end="108" time="250" tween="sine" />
+						<effect type="zoom" center="{{ScaleBorder2('200,125')}}" start="100" end="108" time="250" tween="sine" />
 					</animation>
 					<animation type="UnFocus" reversible="false">
-						<effect type="zoom" center="{{ScaleBorder2('{{ 200 + {SettingsItemExtraWidth}/2 }},{{ 125 + {SettingsItemExtraHeight}/2 }}')}}" start="108" end="100" time="250" tween="sine" />
+						<effect type="zoom" center="{{ScaleBorder2('200,125')}}" start="108" end="100" time="250" tween="sine" />
 					</animation>
 					<control type="image">
-						<width>{{ScaleX('{{ 430 + {SettingsItemExtraWidth} }}')}}</width>
-						<height>{{ScaleY('{{ 270 + {SettingsItemExtraHeight} }}')}}</height>
+						<width>{{ScaleX('430')}}</width>
+						<height>{{ScaleY('270')}}</height>
 						<texture>dialogs/dialog-bg-nobo.png</texture>
 						<bordertexture border="{{ScaleX('21')}}">overlays/shadow.png</bordertexture>
 						<bordersize>{{ScaleX('20')}}</bordersize>
 					</control>
 					<control type="image">
-						<width>{{ScaleX('{{ 430 + {SettingsItemExtraWidth} }}')}}</width>
-						<height>{{ScaleY('{{ 270 + {SettingsItemExtraHeight} }}')}}</height>
+						<width>{{ScaleX('430')}}</width>
+						<height>{{ScaleY('270')}}</height>
 						<texture colordiffuse="button_focus">colors/grey.png</texture>
 						<bordersize>{{ScaleX('20')}}</bordersize>
 						<include>Animation_FocusTextureFade</include>
@@ -86,8 +84,8 @@
 					<control type="image">
 						<left>{{ScaleX('20')}}</left>
 						<top>{{ScaleY('180')}}</top>
-						<width>{{int(ScaleX('{{ 390 + {SettingsItemExtraWidth} }}', True)) + 1}}</width>
-						<height>{{int(ScaleY('{{ 70 + {SettingsItemExtraHeight} }}', True)) + 1}}</height>
+						<width>{{ScaleX('390')}}</width>
+						<height>{{ScaleY('70')}}</height>
 						<texture colordiffuse="border_alpha">colors/black.png</texture>
 					</control>
 					<control type="image">
@@ -101,12 +99,11 @@
 					</control>
 					<control type="label">
 						<left>{{ScaleX('30')}}</left>
-						<top>{{ScaleY('180', True)}}</top>
-						<width>{{ScaleX('{{ 370 + {SettingsItemExtraWidth} }}', True)}}</width>
-						<height>{{ScaleY('{{ 70 + {SettingsItemExtraHeight} }}', True)}}</height>
+						<top>{{ScaleY('190')}}</top>
+						<width>{{ScaleX('370')}}</width>
+						<height>{{ScaleY('400')}}</height>
 						<label>$INFO[ListItem.Label]</label>
 						<align>center</align>
-					<aligny>center</aligny>
 					</control>
 				</control>
 			</focusedlayout>
@@ -177,11 +174,6 @@
 					<onclick>ActivateWindow(addonbrowser)</onclick>
 					<icon>icons/settings/addons.png</icon>
 				</item> -->
-				<item>
-					<label>Reload Skin</label>
-					<onclick>ReloadSkin</onclick>
-					<icon>icons/settings/livetv.png</icon>
-				</item>
 			</content>
 		</control>
 		<include content="TopBar">
