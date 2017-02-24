@@ -551,7 +551,7 @@
 						<preloaditems>2</preloaditems>
 						<pagecontrol>$PARAM[group_id]30</pagecontrol>
 						<scrolltime tween="cubic" easing="out">500</scrolltime>
-						<itemlayout height="{{ScaleY('401')}}" width="{{ScaleX('320')}}">
+						<itemlayout height="{{ScaleY('401')}}" width="{{ScaleX('{{ 320 + {InfoWallExtraWidth} }}')}}">
 							<control type="group">
 								<top>{{ScaleY('150')}}</top>
 								<include content="InfoWallMusicLayout">
@@ -559,11 +559,11 @@
 								</include>
 							</control>
 						</itemlayout>
-						<focusedlayout height="{{ScaleY('401')}}" width="{{ScaleX('320')}}">
+						<focusedlayout height="{{ScaleY('401')}}" width="{{ScaleX('{{ 320 + {InfoWallExtraWidth} }}')}}">
 							<control type="group">
 								<top>{{ScaleY('150')}}</top>
-								<animation effect="zoom" start="100" end="110" time="200" tween="sine" easing="inout" center="{{ScaleBorder2('150,320')}}">Focus</animation>
-								<animation effect="zoom" start="110" end="100" time="200" tween="sine" easing="inout" center="{{ScaleBorder2('150,320')}}">UnFocus</animation>
+								<animation effect="zoom" start="100" end="110" time="200" tween="sine" easing="inout" center="{{ScaleBorder2('{{ 150 + {InfoWallExtraWidth}/2 }},320')}}">Focus</animation>
+								<animation effect="zoom" start="110" end="100" time="200" tween="sine" easing="inout" center="{{ScaleBorder2('{{ 150 + {InfoWallExtraWidth}/2 }},320')}}">UnFocus</animation>
 								<include content="InfoWallMusicLayout">
 									<param name="fallback_image" value="DefaultAddon.png" />
 									<param name="focused" value="true" />

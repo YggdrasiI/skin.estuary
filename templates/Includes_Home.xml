@@ -79,7 +79,7 @@
 				<include content="WidgetListCommon">
 					<param name="list_id" value="$PARAM[list_id]"/>
 				</include>
-				<itemlayout width="{{ScaleX('310')}}" height="{{ScaleY('486')}}">
+				<itemlayout width="{{ScaleX('{{ 310 + {InfoWallExtraWidth} }}')}}" height="{{ScaleY('486')}}">
 					<control type="group">
 						<left>{{ScaleX('68')}}</left>
 						<top>{{ScaleY('10')}}</top>
@@ -88,16 +88,16 @@
 						</include>
 					</control>
 				</itemlayout>
-				<focusedlayout width="{{ScaleX('310')}}" height="{{ScaleY('486')}}">
+				<focusedlayout width="{{ScaleX('{{ 310 + {InfoWallExtraWidth} }}')}}" height="{{ScaleY('486')}}">
 					<control type="group">
 						<depth>DepthContentPopout</depth>
 						<left>{{ScaleX('68')}}</left>
 						<top>{{ScaleY('10')}}</top>
 						<animation type="Focus">
-							<effect type="zoom" start="100" end="110" time="200" tween="sine" easing="inout" center="{{ScaleBorder2('230,130')}}" />
+							<effect type="zoom" start="100" end="110" time="200" tween="sine" easing="inout" center="{{ScaleBorder2('{{ 230+ {InfoWallExtraWidth}/2 }},130')}}" />
 						</animation>
 						<animation type="Unfocus">
-							<effect type="zoom" start="110" end="100" time="200" tween="sine" easing="inout" center="{{ScaleBorder2('230,130')}}" />
+							<effect type="zoom" start="110" end="100" time="200" tween="sine" easing="inout" center="{{ScaleBorder2('{{ 230+ {InfoWallExtraWidth}/2 }},130')}}" />
 						</animation>
 						<include content="InfoWallMovieLayout">
 							<param name="focused" value="true" />

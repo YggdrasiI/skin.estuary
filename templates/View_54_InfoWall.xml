@@ -5,7 +5,7 @@
 		<definition>
 			<control type="image">
 				<top>{{ScaleY('-10')}}</top>
-				<width>{{ScaleX('376')}}</width>
+				<width>{{ScaleX('{{ 376 + {InfoWallExtraWidth} }}')}}</width>
 				<height>{{ScaleY('380')}}</height>
 				<texture>dialogs/dialog-bg-nobo.png</texture>
 				<bordertexture border="{{ScaleX('21')}}">overlays/shadow.png</bordertexture>
@@ -14,7 +14,7 @@
 			<control type="image">
 				<top>{{ScaleY('-14')}}</top>
 				<left>{{ScaleX('-4')}}</left>
-				<width>{{ScaleX('384')}}</width>
+				<width>{{ScaleX('{{ 384 + {InfoWallExtraWidth} }}')}}</width>
 				<height>{{ScaleY('388')}}</height>
 				<texture colordiffuse="button_focus">colors/grey.png</texture>
 				<bordertexture border="{{ScaleX('21')}}">overlays/shadow.png</bordertexture>
@@ -24,6 +24,7 @@
 			</control>
 			<control type="image">
 				<left>{{ScaleX('20')}}</left>
+				<left>{{ScaleX('{{ 20 + {InfoWallExtraWidth}/2 }}')}}</left>
 				<top>{{ScaleY('10')}}</top>
 				<width>{{ScaleX('336')}}</width>
 				<height>{{ScaleY('300')}}</height>
@@ -33,7 +34,7 @@
 			<control type="label">
 				<left>{{ScaleX('20')}}</left>
 				<top>{{ScaleY('318')}}</top>
-				<width>{{ScaleX('338')}}</width>
+				<width>{{ScaleX('{{ 338 + {InfoWallExtraWidth} }}')}}</width>
 				<textoffsetx>{{ScaleX('20')}}</textoffsetx>
 				<height>{{ScaleY('20')}}</height>
 				<align>center</align>
@@ -52,7 +53,7 @@
 		<definition>
 			<control type="image">
 				<top>{{ScaleY('0')}}</top>
-				<width>{{ScaleX('316')}}</width>
+				<width>{{ScaleX('{{ 316 + {InfoWallExtraWidth} }}')}}</width>
 				<height>{{ScaleY('386')}}</height>
 				<texture>dialogs/dialog-bg-nobo.png</texture>
 				<bordertexture border="{{ScaleX('21')}}">overlays/shadow.png</bordertexture>
@@ -61,7 +62,7 @@
 			<control type="image">
 				<top>{{ScaleY('-4')}}</top>
 				<left>{{ScaleX('-4')}}</left>
-				<width>{{ScaleX('324')}}</width>
+				<width>{{ScaleX('{{ 324 + {InfoWallExtraWidth} }}')}}</width>
 				<height>{{ScaleY('394')}}</height>
 				<texture colordiffuse="button_focus">colors/grey.png</texture>
 				<bordertexture border="{{ScaleX('21')}}">overlays/shadow.png</bordertexture>
@@ -72,7 +73,7 @@
 			<control type="image">
 				<left>{{ScaleX('0')}}</left>
 				<top>{{ScaleY('0')}}</top>
-				<width>{{ScaleX('316')}}</width>
+				<width>{{ScaleX('{{ 316 + {InfoWallExtraWidth} }}')}}</width>
 				<height>{{ScaleY('316')}}</height>
 				<texture fallback="$PARAM[fallback_image]" background="true">$VAR[InfoWallThumbVar]</texture>
 				<aspectratio>keep</aspectratio>
@@ -81,7 +82,7 @@
 			<control type="textbox">
 				<left>{{ScaleX('28')}}</left>
 				<top>{{ScaleY('289')}}</top>
-				<width>{{ScaleX('262')}}</width>
+				<width>{{ScaleX('{{ 262 + {InfoWallExtraWidth} }}')}}</width>
 				<height>{{ScaleY('80')}}</height>
 				<font>font12</font>
 				<align>center</align>
@@ -94,7 +95,7 @@
 				<control type="label">
 					<left>{{ScaleX('29')}}</left>
 					<top>{{ScaleY('300')}}</top>
-					<width>{{ScaleX('260')}}</width>
+					<width>{{ScaleX('{{ 260 + {InfoWallExtraWidth} }}')}}</width>
 					<label>$PARAM[sub_label]</label>
 					<font>font10</font>
 					<shadowcolor>text_shadow</shadowcolor>
@@ -104,7 +105,7 @@
 				<control type="label">
 					<left>{{ScaleX('29')}}</left>
 					<top>{{ScaleY('328')}}</top>
-					<width>{{ScaleX('260')}}</width>
+					<width>{{ScaleX('{{ 260 + {InfoWallExtraWidth} }}')}}</width>
 					<label>$PARAM[main_label]</label>
 					<font>font12</font>
 					<shadowcolor>text_shadow</shadowcolor>
@@ -128,7 +129,7 @@
 		<definition>
 			<control type="image">
 				<top>{{ScaleY('10')}}</top>
-				<width>{{ScaleX('316')}}</width>
+				<width>{{ScaleX('{{ 316 + {InfoWallExtraWidth} }}')}}</width>
 				<height>{{ScaleY('288')}}</height>
 				<texture>dialogs/dialog-bg-nobo.png</texture>
 				<bordertexture border="{{ScaleX('21')}}">overlays/shadow.png</bordertexture>
@@ -137,7 +138,7 @@
 			<control type="image">
 				<top>{{ScaleY('6')}}</top>
 				<left>{{ScaleX('-4')}}</left>
-				<width>{{ScaleX('324')}}</width>
+				<width>{{ScaleX('{{ 324 + {InfoWallExtraWidth} }}')}}</width>
 				<height>{{ScaleY('296')}}</height>
 				<texture colordiffuse="button_focus">colors/grey.png</texture>
 				<bordertexture border="{{ScaleX('21')}}">overlays/shadow.png</bordertexture>
@@ -148,14 +149,14 @@
 			<control type="image">
 				<left>{{ScaleX('0')}}</left>
 				<top>{{ScaleY('10')}}</top>
-				<width>{{ScaleX('316')}}</width>
+				<width>{{ScaleX('{{ 316 + {InfoWallExtraWidth} }}')}}</width>
 				<height>{{ScaleY('218')}}</height>
 				<texture fallback="$PARAM[fallback_image]" background="true">$VAR[InfoWallThumbVar]</texture>
 				<aspectratio>scale</aspectratio>
 				<bordersize>{{ScaleX('20')}}</bordersize>
 			</control>
 			<control type="image">
-				<left>{{ScaleX('136')}}</left>
+				<left>{{ScaleX('{{ 136 + {InfoWallExtraWidth} }}')}}</left>
 				<top>{{ScaleY('138')}}</top>
 				<width>{{ScaleX('160')}}</width>
 				<height>{{ScaleY('70')}}</height>
@@ -165,7 +166,7 @@
 			<control type="label">
 				<left>{{ScaleX('31')}}</left>
 				<top>{{ScaleY('178')}}</top>
-				<width>{{ScaleX('260')}}</width>
+				<width>{{ScaleX('{{ 260 + {InfoWallExtraWidth} }}')}}</width>
 				<label>$PARAM[thumb_label]</label>
 				<font>font20_title</font>
 				<shadowcolor>text_shadow</shadowcolor>
@@ -181,7 +182,7 @@
 			<control type="textbox">
 				<left>{{ScaleX('28')}}</left>
 				<top>{{ScaleY('202')}}</top>
-				<width>{{ScaleX('262')}}</width>
+				<width>{{ScaleX('{{ 262 + {InfoWallExtraWidth} }}')}}</width>
 				<height>{{ScaleY('80')}}</height>
 				<font>font12</font>
 				<align>center</align>
@@ -194,7 +195,7 @@
 				<control type="label">
 					<left>{{ScaleX('29')}}</left>
 					<top>{{ScaleY('210')}}</top>
-					<width>{{ScaleX('260')}}</width>
+					<width>{{ScaleX('{{ 260 + {InfoWallExtraWidth} }}')}}</width>
 					<label>$PARAM[sub_label]</label>
 					<font>font12</font>
 					<shadowcolor>text_shadow</shadowcolor>
@@ -204,7 +205,7 @@
 				<control type="label">
 					<left>{{ScaleX('29')}}</left>
 					<top>{{ScaleY('240')}}</top>
-					<width>{{ScaleX('260')}}</width>
+					<width>{{ScaleX('{{ 260 + {InfoWallExtraWidth} }}')}}</width>
 					<label>$PARAM[main_label]</label>
 					<font>font10</font>
 					<shadowcolor>text_shadow</shadowcolor>
@@ -215,7 +216,7 @@
 			<control type="progress">
 				<left>{{ScaleX('20')}}</left>
 				<top>{{ScaleY('258')}}</top>
-				<width>{{ScaleX('276')}}</width>
+				<width>{{ScaleX('{{ 276 + {InfoWallExtraWidth} }}')}}</width>
 				<height>{{ScaleY('1')}}</height>
 				<texturebg></texturebg>
 				<midtexture colordiffuse="button_focus" border="3">progress/texturebg_alt_white.png</midtexture>
@@ -237,7 +238,7 @@
 				<control type="image">
 					<left>{{ScaleX('15')}}</left>
 					<top>{{ScaleY('-10')}}</top>
-					<width>{{ScaleX('290')}}</width>
+					<width>{{ScaleX('{{ 290 + {InfoWallExtraWidth} }}')}}</width>
 					<height>{{ScaleY('400')}}</height>
 					<texture>dialogs/dialog-bg-nobo.png</texture>
 					<bordertexture border="{{ScaleX('21')}}">overlays/shadow.png</bordertexture>
@@ -246,7 +247,7 @@
 				<control type="image">
 					<left>{{ScaleX('15')}}</left>
 					<top>{{ScaleY('-10')}}</top>
-					<width>{{ScaleX('290')}}</width>
+					<width>{{ScaleX('{{ 290 + {InfoWallExtraWidth} }}')}}</width>
 					<height>{{ScaleY('400')}}</height>
 					<texture colordiffuse="button_focus">colors/grey.png</texture>
 					<bordersize>{{ScaleX('20')}}</bordersize>
@@ -256,7 +257,7 @@
 				<control type="textbox">
 					<left>{{ScaleX('40')}}</left>
 					<top>{{ScaleY('250')}}</top>
-					<width>{{ScaleX('242')}}</width>
+					<width>{{ScaleX('{{ 242 + {InfoWallExtraWidth} }}')}}</width>
 					<height>{{ScaleY('120')}}</height>
 					<font>font27</font>
 					<align>center</align>
@@ -268,7 +269,7 @@
 				<control type="image">
 					<left>{{ScaleX('26')}}</left>
 					<top>{{ScaleY('0')}}</top>
-					<width>{{ScaleX('270')}}</width>
+					<width>{{ScaleX('{{ 270 + {InfoWallExtraWidth} }}')}}</width>
 					<height>{{ScaleY('270')}}</height>
 					<texture fallback="DefaultMovies.png" background="true">$INFO[ListItem.Icon]</texture>
 					<aspectratio>scale</aspectratio>
@@ -280,7 +281,7 @@
 				<control type="image">
 					<left>{{ScaleX('11')}}</left>
 					<top>{{ScaleY('-14')}}</top>
-					<width>{{ScaleX('298')}}</width>
+					<width>{{ScaleX('{{ 298 + {InfoWallExtraWidth} }}')}}</width>
 					<height>{{ScaleY('408')}}</height>
 					<texture colordiffuse="button_focus">colors/grey.png</texture>
 					<bordertexture border="{{ScaleX('21')}}">overlays/shadow.png</bordertexture>
@@ -291,7 +292,7 @@
 				<control type="image">
 					<left>{{ScaleX('15')}}</left>
 					<top>{{ScaleY('-10')}}</top>
-					<width>{{ScaleX('290')}}</width>
+					<width>{{ScaleX('{{ 290 + {InfoWallExtraWidth} }}')}}</width>
 					<height>{{ScaleY('400')}}</height>
 					<texture background="true">$INFO[ListItem.Art(poster)]</texture>
 					<aspectratio>scale</aspectratio>
@@ -313,7 +314,7 @@
 				<control type="image">
 					<left>{{ScaleX('35')}}</left>
 					<top>{{ScaleY('0')}}</top>
-					<width>{{ScaleX('250')}}</width>
+					<width>{{ScaleX('{{ 250 + {InfoWallExtraWidth} }}')}}</width>
 					<height>{{ScaleY('50')}}</height>
 					<texture colordiffuse="CCFFFFFF">overlays/overlayfade.png</texture>
 					<visible>!String.IsEmpty(ListItem.Art(poster))</visible>
@@ -321,14 +322,14 @@
 				<control type="label">
 					<left>{{ScaleX('0')}}</left>
 					<top>{{ScaleY('20')}}</top>
-					<width>{{ScaleX('244')}}</width>
+					<width>{{ScaleX('{{ 244 + {InfoWallExtraWidth} }}')}}</width>
 					<label>$INFO[ListItem.Property(WatchedEpisodes)]$INFO[ListItem.Property(TotalEpisodes), / ,]</label>
 					<font>font20_title</font>
 					<shadowcolor>text_shadow</shadowcolor>
 					<align>right</align>
 				</control>
 				<control type="image">
-					<left>{{ScaleX('254')}}</left>
+					<left>{{ScaleX('{{ 254 + {InfoWallExtraWidth} }}')}}</left>
 					<top>{{ScaleY('23')}}</top>
 					<width>{{ScaleX('24')}}</width>
 					<height>{{ScaleY('24')}}</height>
@@ -350,7 +351,7 @@
 			<control type="progress">
 				<left>{{ScaleX('35')}}</left>
 				<top>{{ScaleY('350')}}</top>
-				<width>{{ScaleX('250')}}</width>
+				<width>{{ScaleX('{{ 250 + {InfoWallExtraWidth} }}')}}</width>
 				<height>{{ScaleY('1')}}</height>
 				<texturebg></texturebg>
 				<midtexture colordiffuse="button_focus" border="3">progress/texturebg_alt_white.png</midtexture>
@@ -381,26 +382,26 @@
 				<pagecontrol>531</pagecontrol>
 				<scrolltime tween="cubic" easing="out">500</scrolltime>
 				<visible>Container.Content(artists) | Container.Content(albums) | Container.Content(sets) | Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Container.Content(musicvideos) | Container.Content(images) | Container.Content(videos)</visible>
-				<itemlayout height="{{ScaleY('445')}}" width="{{ScaleX('320')}}" condition="Container.Content(movies) | Container.Content(sets) | Container.Content(tvshows) | Container.Content(seasons)">
+				<itemlayout height="{{ScaleY('445')}}" width="{{ScaleX('{{ 320 + {InfoWallExtraWidth} }}')}}" condition="Container.Content(movies) | Container.Content(sets) | Container.Content(tvshows) | Container.Content(seasons)">
 					<control type="group">
 						<left>{{ScaleX('30')}}</left>
 						<top>{{ScaleY('120')}}</top>
 						<include>InfoWallMovieLayout</include>
 					</control>
 				</itemlayout>
-				<focusedlayout height="{{ScaleY('445')}}" width="{{ScaleX('320')}}" condition="Container.Content(movies) | Container.Content(sets) | Container.Content(tvshows) | Container.Content(seasons)">
+				<focusedlayout height="{{ScaleY('445')}}" width="{{ScaleX('{{ 320 + {InfoWallExtraWidth} }}')}}" condition="Container.Content(movies) | Container.Content(sets) | Container.Content(tvshows) | Container.Content(seasons)">
 					<control type="group">
 						<depth>DepthContentPopout</depth>
 						<left>{{ScaleX('30')}}</left>
-						<animation effect="zoom" start="100" end="110" time="200" tween="sine" easing="inout" center="{{ScaleBorder2('190,300')}}">Focus</animation>
-						<animation effect="zoom" start="110" end="100" time="200" tween="sine" easing="inout" center="{{ScaleBorder2('190,300')}}">UnFocus</animation>
+						<animation effect="zoom" start="100" end="110" time="200" tween="sine" easing="inout" center="{{ScaleBorder2('{{ 190 + {InfoWallExtraWidth}/2 }},300')}}">Focus</animation>
+						<animation effect="zoom" start="110" end="100" time="200" tween="sine" easing="inout" center="{{ScaleBorder2('{{ 190 + {InfoWallExtraWidth}/2 }},300')}}">UnFocus</animation>
 						<top>{{ScaleY('120')}}</top>
 						<include content="InfoWallMovieLayout">
 							<param name="focused" value="true" />
 						</include>
 					</control>
 				</focusedlayout>
-				<itemlayout height="{{ScaleY('300')}}" width="{{ScaleX('300')}}" condition="Container.Content(episodes) | Container.Content(videos) | Container.Content(musicvideos)">
+				<itemlayout height="{{ScaleY('300')}}" width="{{ScaleX('{{ 300 + {InfoWallExtraWidth} }}')}}" condition="Container.Content(episodes) | Container.Content(videos) | Container.Content(musicvideos)">
 					<control type="group">
 						<left>{{ScaleX('64')}}</left>
 						<top>{{ScaleY('110')}}</top>
@@ -410,11 +411,11 @@
 						</include>
 					</control>
 				</itemlayout>
-				<focusedlayout height="{{ScaleY('300')}}" width="{{ScaleX('300')}}" condition="Container.Content(episodes) | Container.Content(videos) | Container.Content(musicvideos)">
+				<focusedlayout height="{{ScaleY('300')}}" width="{{ScaleX('{{ 300 + {InfoWallExtraWidth} }}')}}" condition="Container.Content(episodes) | Container.Content(videos) | Container.Content(musicvideos)">
 					<control type="group">
 						<depth>DepthContentPopout</depth>
-						<animation effect="zoom" start="100" end="110" time="200" tween="sine" easing="inout" center="{{ScaleBorder2('220,250')}}">Focus</animation>
-						<animation effect="zoom" start="110" end="100" time="200" tween="sine" easing="inout" center="{{ScaleBorder2('220,250')}}">UnFocus</animation>
+						<animation effect="zoom" start="100" end="110" time="200" tween="sine" easing="inout" center="{{ScaleBorder2('{{ 220 + {InfoWallExtraWidth}/2 }},250')}}">Focus</animation>
+						<animation effect="zoom" start="110" end="100" time="200" tween="sine" easing="inout" center="{{ScaleBorder2('{{ 220 + {InfoWallExtraWidth}/2 }},250')}}">UnFocus</animation>
 						<left>{{ScaleX('64')}}</left>
 						<top>{{ScaleY('110')}}</top>
 						<include content="InfoWallEpisodeLayout">
@@ -423,18 +424,18 @@
 						</include>
 					</control>
 				</focusedlayout>
-				<itemlayout height="{{ScaleY('410')}}" width="{{ScaleX('310')}}" condition="Container.Content(artists) | Container.Content(albums)">
+				<itemlayout height="{{ScaleY('410')}}" width="{{ScaleX('{{ 310 + {InfoWallExtraWidth} }}')}}" condition="Container.Content(artists) | Container.Content(albums)">
 					<control type="group">
 						<top>{{ScaleY('150')}}</top>
 						<left>{{ScaleX('40')}}</left>
 						<include>InfoWallMusicLayout</include>
 					</control>
 				</itemlayout>
-				<focusedlayout height="{{ScaleY('410')}}" width="{{ScaleX('310')}}" condition="Container.Content(artists) | Container.Content(albums)">
+				<focusedlayout height="{{ScaleY('410')}}" width="{{ 310 + {InfoWallExtraWidth} }}" condition="Container.Content(artists) | Container.Content(albums)">
 					<control type="group">
 						<depth>DepthContentPopout</depth>
-						<animation effect="zoom" start="100" end="115" time="200" tween="sine" easing="inout" center="{{ScaleBorder2('200,350')}}">Focus</animation>
-						<animation effect="zoom" start="115" end="100" time="200" tween="sine" easing="inout" center="{{ScaleBorder2('200,350')}}">UnFocus</animation>
+						<animation effect="zoom" start="100" end="115" time="200" tween="sine" easing="inout" center="{{ScaleBorder2('{{ 200 + {InfoWallExtraWidth}/2 }},350')}}">Focus</animation>
+						<animation effect="zoom" start="115" end="100" time="200" tween="sine" easing="inout" center="{{ScaleBorder2('{{ 200 + {InfoWallExtraWidth}/2 }},350')}}">UnFocus</animation>
 						<top>{{ScaleY('150')}}</top>
 						<left>{{ScaleX('40')}}</left>
 						<include content="InfoWallMusicLayout">
@@ -442,20 +443,20 @@
 						</include>
 					</control>
 				</focusedlayout>
-				<itemlayout height="{{ScaleY('400')}}" width="{{ScaleX('378')}}" condition="Container.Content(images)">
+				<itemlayout height="{{ScaleY('400')}}" width="{{ 378 + {InfoWallExtraWidth} }}" condition="Container.Content(images)">
 					<control type="group">
 						<left>{{ScaleX('0')}}</left>
 						<top>{{ScaleY('150')}}</top>
 						<include>InfoWallPictureLayout</include>
 					</control>
 				</itemlayout>
-				<focusedlayout height="{{ScaleY('400')}}" width="{{ScaleX('378')}}" condition="Container.Content(images)">
+				<focusedlayout height="{{ScaleY('400')}}" width="{{ 378 + {InfoWallExtraWidth} }}" condition="Container.Content(images)">
 					<control type="group">
 						<depth>DepthContentPopout</depth>
 						<left>{{ScaleX('0')}}</left>
 						<top>{{ScaleY('150')}}</top>
-						<animation effect="zoom" start="100" end="110" time="200" tween="sine" easing="inout" center="{{ScaleBorder2('180,330')}}">Focus</animation>
-						<animation effect="zoom" start="110" end="100" time="200" tween="sine" easing="inout" center="{{ScaleBorder2('180,330')}}">UnFocus</animation>
+						<animation effect="zoom" start="100" end="110" time="200" tween="sine" easing="inout" center="{{ScaleBorder2('{{ 180 + {InfoWallExtraWidth}/2 }},330')}}">Focus</animation>
+						<animation effect="zoom" start="110" end="100" time="200" tween="sine" easing="inout" center="{{ScaleBorder2('{{ 180 + {InfoWallExtraWidth}/2 }},330')}}">UnFocus</animation>
 						<include content="InfoWallPictureLayout">
 							<param name="focused" value="true" />
 						</include>

@@ -75,14 +75,14 @@
 				<control type="list" id="9000">
 					<left>{{ScaleX('1')}}</left>
 					<top>{{ScaleY('300')}}</top>
-					<width>{{ScaleX('462')}}</width>
+					<width>{{ScaleX('{{ 462 + {HomeLeftPanelExtraWidth} }}')}}</width>
 					<height>{{ScaleY('671')}}</height>
 					<pagecontrol>70</pagecontrol>
 					<onup>700</onup>
 					<ondown>700</ondown>
 					<onright>SetFocus($INFO[Container(9000).ListItem.Property(menu_id)])</onright>
 					<scrolltime tween="cubic" easing="out">500</scrolltime>
-					<focusedlayout height="{{ScaleY('95')}}" width="{{ScaleX('462')}}">
+					<focusedlayout height="{{ScaleY('95')}}" width="{{ScaleX('{ 462 + {HomeLeftPanelExtraWidth} }}')}}">
 						<control type="image">
 							<left>{{ScaleX('0')}}</left>
 							<right>{{ScaleX('0')}}</right>
@@ -122,7 +122,7 @@
 							<shadowcolor>text_shadow</shadowcolor>
 						</control>
 					</focusedlayout>
-					<itemlayout height="{{ScaleY('95')}}" width="{{ScaleX('462')}}">
+					<itemlayout height="{{ScaleY('95')}}" width="{{ScaleX('{{ 462 + {HomeLeftPanelExtraWidth} }}')}}">
 						<control type="label">
 							<left>{{ScaleX('104')}}</left>
 							<bottom>{{ScaleY('0')}}</bottom>

@@ -47,6 +47,7 @@ substitutions = {
 
     "HomeLeftPanelExtraWidth": 200,
     "InfoBarExtraHeight": 30,
+    "InfoWallExtraWidth": 200,
 
     "MediaMenuBladeExtraWidth": 400,
     "MediaMenuBladeExtraWidth2": 400,  # Affects background image
@@ -55,7 +56,7 @@ substitutions = {
     "SettingsItemExtraWidth": 200,
     "SettingsItemExtraHeight": 20,  # For bigger font sizes
 
-    "DialogExtraWidth": 200,
+    "DialogExtraWidth": 300,
 
     "ImageWidgetButtonExtraHeight": 60,
 }

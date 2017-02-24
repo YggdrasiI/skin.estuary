@@ -488,7 +488,7 @@
 						<scrolltime tween="cubic" easing="out">500</scrolltime>
 						<orientation>vertical</orientation>
 						<visible>Integer.IsGreater(Container(14100).NumItems,0) | Container(14100).IsUpdating</visible>
-						<itemlayout width="{{ScaleX('330')}}" height="{{ScaleY('396')}}">
+						<itemlayout width="{{ScaleX('{{ 330 + {InfoWallExtraWidth} }}')}}" height="{{ScaleY('396')}}">
 							<control type="group">
 								<top>{{ScaleY('130')}}</top>
 								<include content="InfoWallMusicLayout">
@@ -497,12 +497,12 @@
 								</include>
 							</control>
 						</itemlayout>
-						<focusedlayout width="{{ScaleX('330')}}" height="{{ScaleY('396')}}">
+						<focusedlayout width="{{ScaleX('{{ 330 + {InfoWallExtraWidth} }}')}}" height="{{ScaleY('396')}}">
 							<control type="group">
 								<depth>DepthContentPopout</depth>
 								<top>{{ScaleY('130')}}</top>
-								<animation effect="zoom" start="100" end="110" time="200" tween="sine" easing="inout" center="{{ScaleBorder2('170,320')}}">Focus</animation>
-								<animation effect="zoom" start="110" end="100" time="200" tween="sine" easing="inout" center="{{ScaleBorder2('170,320')}}">UnFocus</animation>
+								<animation effect="zoom" start="100" end="110" time="200" tween="sine" easing="inout" center="{{ScaleBorder2('{{ 170 + {InfoWallExtraWidth}/2 }},320')}}">Focus</animation>
+								<animation effect="zoom" start="110" end="100" time="200" tween="sine" easing="inout" center="{{ScaleBorder2('{{ 170 + {InfoWallExtraWidth}/2 }},320')}}">UnFocus</animation>
 								<include content="InfoWallMusicLayout">
 									<param name="fallback_image" value="DefaultFavourites.png" />
 									<param name="focused" value="true" />
