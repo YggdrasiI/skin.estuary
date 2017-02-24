@@ -971,7 +971,7 @@
 				<animation effect="fade" start="0" end="100" time="400">WindowOpen</animation>
 				<animation effect="fade" start="100" end="0" time="300">WindowClose</animation>
 				<left>{{ScaleX('0')}}</left>
-				<bottom>{{ScaleY('0')}}</bottom>
+				<bottom>{{ScaleY('39')}}</bottom>
 				<height>{{ScaleY('39')}}</height>
 				<width>{{ScaleX('100%')}}</width>
 				<font>font12</font>
