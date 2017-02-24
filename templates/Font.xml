@@ -67,7 +67,7 @@
 		<font>
 			<name>font_clock</name>
 			<filename>Roboto-Thin.ttf</filename>
-			<size>70</size>
+			<size>45</size>
 		</font>
 		<!-- Title Fonts -->
 		<font>
@@ -179,7 +179,7 @@
 		<font>
 			<name>font_clock</name>
 			<filename>arial.ttf</filename>
-			<size>70</size>
+			<size>45</size>
 			<style>lighten</style>
 		</font>
 		<!-- Title Fonts -->

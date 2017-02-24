@@ -841,15 +841,15 @@
 				<control type="image">
 					<left>{{ScaleX('0')}}</left>
 					<top>{{ScaleY('0')}}</top>
-					<width>{{ScaleX('110%')}}</width>
-					<height>{{ScaleY('130')}}</height>
+					<width>{{ScaleX('105%')}}</width>
+					<height>{{ScaleY('{{ 130 + {InfoBarExtraHeight} }}')}}</height>
 					<texture>frame/InfoBar.png</texture>
 					<animation effect="fade" start="100" end="0" time="300" condition="Window.Next(screencalibration)">WindowClose</animation>
 				</control>
 				<control type="grouplist">
 					<left>{{ScaleX('35')}}</left>
 					<description>Left side of top bar</description>
-					<width>{{ScaleX('900')}}</width>
+					<width>{{ScaleX('{{ 900 + {InfoBarExtraWidth} }}')}}</width>
 					<top>{{ScaleY('-7')}}</top>
 					<height>{{ScaleY('{{ 100 + {InfoBarExtraHeight} }}')}}</height>
 					<orientation>horizontal</orientation>
@@ -892,7 +892,7 @@
 				<control type="button">
 					<top>{{ScaleY('0')}}</top>
 					<width>{{ScaleX('200')}}</width>
-					<height>{{ScaleY('100')}}</height>
+					<height>{{ 100 + {InfoBarExtraHeight} }}</height>
 					<label></label>
 					<onclick>Action(Back)</onclick>
 					<texturefocus />
@@ -903,8 +903,8 @@
 					<label>$PARAM[sublabel]</label>
 					<left>{{ScaleX('35')}}</left>
 					<shadowcolor>text_shadow</shadowcolor>
-					<height>{{ScaleY('100')}}</height>
-					<width>{{ScaleX('900')}}</width>
+					<height>{{ 100 + {InfoBarExtraHeight} }}</height>
+					<width>{{ScaleX('{{ 900 + {InfoBarExtraWidth} }}')}}</width>
 					<animation effect="fade" start="0" end="100" time="300">WindowOpen</animation>
 					<animation effect="fade" start="100" end="0" time="200">WindowClose</animation>
 				</control>
@@ -912,29 +912,29 @@
 					<top>{{ScaleY('0')}}</top>
 					<align>right</align>
 					<right>{{ScaleX('20')}}</right>
-					<height>{{ScaleY('200')}}</height>
+					<height>{{ 200 + 2*{InfoBarExtraHeight} }}</height>
 					<orientation>horizontal</orientation>
-					<width>{{ScaleX('900')}}</width>
+					<width>{{ScaleX('{{ 900 + {InfoBarExtraWidth} }}')}}</width>
 					<itemgap>{{ScaleX('10')}}</itemgap>
 					<visible>!Window.IsVisible(extendedprogressdialog)</visible>
 					<animation effect="fade" time="150">VisibleChange</animation>
 					<control type="group">
-						<width>{{ScaleX('600')}}</width>
+						<width>{{ScaleX('{{ 600 + {InfoBarExtraWidth} }}')}}</width>
 						<visible>Player.HasMedia + String.IsEmpty(Window(Videos).Property(PlayingBackgroundMedia))</visible>
 						<animation effect="fade" time="200">VisibleChange</animation>
 						<control type="grouplist">
 							<left>{{ScaleX('-75')}}</left>
 							<orientation>horizontal</orientation>
-							<height>{{ScaleY('38')}}</height>
+							<height>{{ 38 + {InfoBarExtraHeight}/2 }}</height>
 							<top>{{ScaleY('14')}}</top>
 							<align>right</align>
-							<width>{{ScaleX('660')}}</width>
+							<width>{{ScaleX('{{ 660 + {InfoBarExtraWidth} }}')}}</width>
 							<itemgap>{{ScaleX('5')}}</itemgap>
 							<usecontrolcoords>true</usecontrolcoords>
 							<control type="image">
 								<top>{{ScaleY('4')}}</top>
-								<width>{{ScaleX('32')}}</width>
-								<height>{{ScaleY('32')}}</height>
+								<width>{{ 32 + {InfoBarExtraHeight}/2 }}</width>
+								<height>{{ 32 + {InfoBarExtraHeight}/2 }}</height>
 								<aspectratio>keep</aspectratio>
 								<texture colordiffuse="button_focus">$VAR[NowPlayingIconVar]</texture>
 							</control>
@@ -942,18 +942,18 @@
 								<label>$INFO[Player.Title]</label>
 								<font>font27</font>
 								<shadowcolor>text_shadow</shadowcolor>
-								<height>{{ScaleY('35')}}</height>
-								<width min="{{ScaleX('1')}}" max="{{ScaleX('602')}}">{{ScaleX('auto')}}</width>
+								<height>{{ 35 + {InfoBarExtraHeight}/2 }}</height>
+								<width min="{{ScaleX('1')}}" max="{{ScaleX('{{ 602 + {InfoBarExtraWidth} }}')}}">{{ScaleX('auto')}}</width>
 							</control>
 						</control>
 						<control type="label" id="7700">
 							<label>$VAR[NowPlayingSublabelVar]</label>
 							<left>{{ScaleX('-45')}}</left>
-							<top>{{ScaleY('44')}}</top>
+							<top>{{ 44 + {InfoBarExtraHeight}/2 }}</top>
 							<font>font12</font>
 							<textcolor>grey</textcolor>
 							<shadowcolor>text_shadow</shadowcolor>
-							<height>{{ScaleY('25')}}</height>
+							<height>{{ 25 + {InfoBarExtraHeight}/2 }}</height>
 							<width>{{ScaleX('630')}}</width>
 							<align>right</align>
 						</control>
@@ -970,14 +970,14 @@
 				<control type="grouplist">
 					<right>{{ScaleX('10')}}</right>
 					<top>{{ScaleY('70')}}</top>
-					<width>{{ScaleX('800')}}</width>
-					<height>{{ScaleY('100')}}</height>
+					<width>{{ScaleX('{{ 800 + {InfoBarExtraWidth} }}')}}</width>
+					<height>{{ 100 + {InfoBarExtraHeight} }}</height>
 					<align>right</align>
 					<itemgap>{{ScaleX('5')}}</itemgap>
 					<orientation>horizontal</orientation>
 					<usecontrolcoords>true</usecontrolcoords>
 					<control type="label">
-						<height>{{ScaleY('50')}}</height>
+						<height>{{ 50 + {InfoBarExtraHeight}/2 }}</height>
 						<width>{{ScaleX('auto')}}</width>
 						<aligny>center</aligny>
 						<textoffsetx>{{ScaleX('-8')}}</textoffsetx>
@@ -987,14 +987,14 @@
 					<control type="image">
 						<top>{{ScaleY('16')}}</top>
 						<width>{{ScaleX('40')}}</width>
-						<height>{{ScaleY('22')}}</height>
+						<height>{{ 22 + {InfoBarExtraHeight}/3 }}</height>
 						<fadetime>300</fadetime>
 						<aspectratio aligny="center" align="left">keep</aspectratio>
 						<texture>icons/power.png</texture>
 						<visible>System.HasAlarm(shutdowntimer)</visible>
 					</control>
 					<control type="label">
-						<height>{{ScaleY('50')}}</height>
+						<height>{{ 50 + {InfoBarExtraHeight}/2 }}</height>
 						<width>{{ScaleX('auto')}}</width>
 						<aligny>center</aligny>
 						<label>$INFO[Window(Weather).Property(Current.Temperature)]$INFO[System.TemperatureUnits]</label>
@@ -1002,8 +1002,8 @@
 					</control>
 					<control type="image">
 						<top>{{ScaleY('1')}}</top>
-						<width>{{ScaleX('50')}}</width>
-						<height>{{ScaleY('50')}}</height>
+						<width>{{ 50 + {InfoBarExtraHeight}/2 }}</width>
+						<height>{{ 50 + {InfoBarExtraHeight}/2 }}</height>
 						<fadetime>300</fadetime>
 						<aspectratio aligny="center" align="left">keep</aspectratio>
 						<texture>$INFO[Weather.FanartCode,weather/small/,.png]</texture>
@@ -1013,7 +1013,7 @@
 						<top>{{ScaleY('8')}}</top>
 						<left>{{ScaleX('-20')}}</left>
 						<width>{{ScaleX('74')}}</width>
-						<height>{{ScaleY('40')}}</height>
+						<height>{{ 40 + {InfoBarExtraHeight}/3 }}</height>
 						<fadetime>300</fadetime>
 						<aspectratio aligny="center" align="center">keep</aspectratio>
 						<texture>dialogs/volume/mute.png</texture>
@@ -1026,7 +1026,7 @@
 					<label>$INFO[ListItem.SortLetter]</label>
 					<font>font_MainMenu</font>
 					<width>{{ScaleX('100%')}}</width>
-					<height>{{ScaleY('80')}}</height>
+					<height>{{ 80 + {InfoBarExtraHeight} }}</height>
 					<align>center</align>
 					<visible>!System.HasModalDialog</visible>
 					<visible>Container.Scrolling</visible>

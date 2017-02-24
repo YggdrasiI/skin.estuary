@@ -368,7 +368,7 @@
 			<visible>Control.IsVisible(54)</visible>
 			<include>Visible_Right</include>
 			<control type="panel" id="54">
-				<left>{{ScaleX('490')}}</left>
+				<left>{{ScaleX('{{ 490 +{HomeLeftPanelExtraWidth} }}')}}</left>
 				<top>{{ScaleY('0')}}</top>
 				<right>{{ScaleX('15')}}</right>
 				<height>{{ScaleY('100%')}}</height>

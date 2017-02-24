@@ -47,6 +47,7 @@ substitutions = {
 
     "HomeLeftPanelExtraWidth": 200,
     "InfoBarExtraHeight": 30,
+    "InfoBarExtraWidth": 200,  # for TopBar include
     "InfoWallExtraWidth": 200,
 
     "MediaMenuBladeExtraWidth": 400,
