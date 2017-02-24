@@ -70,7 +70,7 @@
 			<control type="group">
 				<include>OpenClose_Left</include>
 				<include content="ContentPanel">
-					<param name="width" value="{{ScaleX('523')}}" />
+					<param name="width" value="{{ScaleX('{{ 523 + {HomeLeftPanelExtraWidth} }}')}}" />
 				</include>
 				<control type="list" id="9000">
 					<left>{{ScaleX('1')}}</left>

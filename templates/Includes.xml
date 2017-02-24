@@ -540,9 +540,10 @@
 				<control type="group">
 					<visible>Integer.IsGreater(Container($PARAM[group_id]50).NumItems,0) | Container($PARAM[group_id]50).IsUpdating</visible>
 					<control type="panel" id="$PARAM[group_id]50">
-						<left>{{ScaleX('540')}}</left>
+						<left>{{ScaleX('{{ 540 + {HomeLeftPanelExtraWidth} }}')}}</left>
 						<top>{{ScaleY('0')}}</top>
-						<right>{{ScaleX('50')}}</right>
+						<!--<right>{{ScaleX('50')}}</right>-->
+						<width>{{ScaleX('{{ 2 * ( 320 + {InfoWallExtraWidth} ) }}')}}</width>
 						<height>{{ScaleY('100%')}}</height>
 						<onleft>9000</onleft>
 						<onright>$PARAM[group_id]30</onright>

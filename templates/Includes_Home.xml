@@ -94,10 +94,10 @@
 						<left>{{ScaleX('68')}}</left>
 						<top>{{ScaleY('10')}}</top>
 						<animation type="Focus">
-							<effect type="zoom" start="100" end="110" time="200" tween="sine" easing="inout" center="{{ScaleBorder2('{{ 230+ {InfoWallExtraWidth}/2 }},130')}}" />
+							<effect type="zoom" start="100" end="110" time="200" tween="sine" easing="inout" center="{{ScaleBorder2('{{ 230 + {InfoWallExtraWidth}/2 }},130')}}" />
 						</animation>
 						<animation type="Unfocus">
-							<effect type="zoom" start="110" end="100" time="200" tween="sine" easing="inout" center="{{ScaleBorder2('{{ 230+ {InfoWallExtraWidth}/2 }},130')}}" />
+							<effect type="zoom" start="110" end="100" time="200" tween="sine" easing="inout" center="{{ScaleBorder2('{{ 230 + {InfoWallExtraWidth}/2 }},130')}}" />
 						</animation>
 						<include content="InfoWallMovieLayout">
 							<param name="focused" value="true" />
@@ -259,7 +259,7 @@
 				</include>
 				<visible>$PARAM[visible]</visible>
 				<visible>Integer.IsGreater(Container($PARAM[list_id]).NumItems,0) | Container($PARAM[list_id]).IsUpdating</visible>
-				<itemlayout width="{{ScaleX('310')}}" height="{{ScaleY('500')}}">
+				<itemlayout width="{{ScaleX('{{ 310 + {InfoWallExtraWidth} }}')}}" height="{{ScaleY('500')}}">
 					<control type="group">
 						<left>{{ScaleX('70')}}</left>
 						<include content="InfoWallMusicLayout">
@@ -270,7 +270,7 @@
 						</include>
 					</control>
 				</itemlayout>
-				<focusedlayout width="{{ScaleX('310')}}" height="{{ScaleY('500')}}">
+				<focusedlayout width="{{ScaleX('{{ScaleX('{{ 310 + {InfoWallExtraWidth} }}')}}')}}" height="{{ScaleY('500')}}">
 					<control type="group">
 						<depth>DepthContentPopout</depth>
 						<left>{{ScaleX('70')}}</left>
@@ -295,7 +295,7 @@
 	<include name="WidgetListCategories">
 		<param name="item_limit">20</param>
 		<param name="icon">$INFO[ListItem.Icon]</param>
-		<param name="icon_height">120</param>
+		<param name="icon_height">{{ScaleY('120')}}</param>
 		<param name="pvr_submenu">false</param>
 		<param name="addon_submenu">false</param>
 		<param name="pvr_type">TV</param>
@@ -312,7 +312,7 @@
 			</include>
 			<control type="panel" id="$PARAM[list_id]">
 				<left>{{ScaleX('0')}}</left>
-				<top>{{ScaleY('110')}}</top>
+				<top>{{ScaleY('{{ 110 + {InfoBarExtraHeight} }}')}}</top>
 				<right>{{ScaleX('0')}}</right>
 				<height>{{ScaleY('290')}}</height>
 				<include content="WidgetListCommon">
@@ -320,11 +320,11 @@
 				</include>
 				<visible>$PARAM[visible]</visible>
 				<visible>Integer.IsGreater(Container($PARAM[list_id]).NumItems,0) | Container($PARAM[list_id]).IsUpdating</visible>
-				<itemlayout width="{{ScaleX('310')}}" height="{{ScaleY('340')}}">
+				<itemlayout width="{{ScaleX('{{ 310 + {InfoWallExtraWidth} }}')}}" height="{{ScaleY('340')}}">
 					<control type="group">
 						<left>{{ScaleX('70')}}</left>
 						<control type="image">
-							<width>{{ScaleX('316')}}</width>
+							<width>{{ScaleX('{{ 316 + {InfoWallExtraWidth} }}')}}</width>
 							<height>{{ScaleY('200')}}</height>
 							<texture>dialogs/dialog-bg-nobo.png</texture>
 							<bordertexture border="{{ScaleX('21')}}">overlays/shadow.png</bordertexture>
@@ -332,8 +332,8 @@
 						</control>
 						<control type="image">
 							<centertop>{{ScaleX('74')}}</centertop>
-							<left>{{ScaleX('62')}}</left>
-							<width>{{ScaleX('200')}}</width>
+							<left>{{ScaleX('{{ 62 + {InfoWallExtraWidth}/2 }}')}}</left>
+							<width>{{ScaleX('{{ 200 + 0*{InfoWallExtraWidth} }}')}}</width>
 							<height>$PARAM[icon_height]</height>
 							<texture fallback="DefaultFolder.png">$PARAM[icon]</texture>
 							<aspectratio>keep</aspectratio>
@@ -341,7 +341,7 @@
 						<control type="textbox">
 							<left>{{ScaleX('42')}}</left>
 							<top>{{ScaleY('106')}}</top>
-							<width>{{ScaleX('240')}}</width>
+							<width>{{ScaleX('{{ 240 + {InfoWallExtraWidth} }}')}}</width>
 							<height>{{ScaleY('70')}}</height>
 							<label>$INFO[ListItem.Label]</label>
 							<font>font25_narrow</font>
@@ -351,7 +351,7 @@
 						</control>
 					</control>
 				</itemlayout>
-				<focusedlayout width="{{ScaleX('310')}}" height="{{ScaleY('340')}}">
+				<focusedlayout width="{{ScaleX('{{ 310 + {InfoWallExtraWidth} }}')}}" height="{{ScaleY('340')}}">
 					<control type="group">
 						<depth>DepthContentPopout</depth>
 						<left>{{ScaleX('70')}}</left>
@@ -362,14 +362,14 @@
 							<effect type="zoom" start="115" end="100" time="200" tween="sine" easing="inout" center="{{ScaleBorder2('228,70')}}" />
 						</animation>
 						<control type="image">
-							<width>{{ScaleX('316')}}</width>
+							<width>{{ScaleX('{{ 316 + {InfoWallExtraWidth} }}')}}</width>
 							<height>{{ScaleY('200')}}</height>
 							<texture>dialogs/dialog-bg-nobo.png</texture>
 							<bordertexture border="{{ScaleX('21')}}">overlays/shadow.png</bordertexture>
 							<bordersize>{{ScaleX('20')}}</bordersize>
 						</control>
 						<control type="image">
-							<width>{{ScaleX('316')}}</width>
+							<width>{{ScaleX('{{ 316 + {InfoWallExtraWidth} }}')}}</width>
 							<height>{{ScaleY('200')}}</height>
 							<texture colordiffuse="button_focus">colors/grey.png</texture>
 							<bordersize>{{ScaleX('20')}}</bordersize>
@@ -377,8 +377,8 @@
 						</control>
 						<control type="image">
 							<centertop>{{ScaleX('74')}}</centertop>
-							<left>{{ScaleX('62')}}</left>
-							<width>{{ScaleX('200')}}</width>
+							<left>{{ScaleX('{{ 62 + {InfoWallExtraWidth}/2 }}')}}</left>
+							<width>{{ScaleX('{{ 200 + 0*{InfoWallExtraWidth} }}')}}</width>
 							<height>$PARAM[icon_height]</height>
 							<texture fallback="DefaultFolder.png">$PARAM[icon]</texture>
 							<aspectratio>keep</aspectratio>
@@ -386,7 +386,7 @@
 						<control type="textbox">
 							<left>{{ScaleX('42')}}</left>
 							<top>{{ScaleY('106')}}</top>
-							<width>{{ScaleX('240')}}</width>
+							<width>{{ScaleX('{{ 240 + {InfoWallExtraWidth} }}')}}</width>
 							<height>{{ScaleY('70')}}</height>
 							<label>$INFO[ListItem.Label]</label>
 							<font>font25_narrow</font>
