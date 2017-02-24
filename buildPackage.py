@@ -174,6 +174,11 @@ def main():
         settings["dest_folder"],
         this_folder_name)
 
+    if not os.path.isdir("out"):
+        print("No folder with parsed templates found! "
+              "Please run ./parseTemplates first to create './out'.")
+        return -1
+
     if settings["force"]:
         confirm = True
     else:
